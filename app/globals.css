@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[id] {
+  scroll-margin-top: 100px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  /* background: #f4f4ec; */
+  background: white !important;
+  /* color: var(--foreground); */
+  font-family: var(--font-manrope), "Manrope", sans-serif;
+}
+h1, h2, h3, h4, h5, h6, p, span, li, button, a, input, textarea {
+  font-family: inherit;
+}
+
+/* transform + box-shadow need a non-inline box; default <a> is inline so hover looks like it does nothing */
+button {
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+a {
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  button:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  }
+  /* button:hover,
+  a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  } */
+}
+
+.dot-gothic {
+  font-family: "DotGothic16", sans-serif !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  button{
+    transition: none;
+  }
+
+  /* button:hover,
+  a:hover {
+    transform: none;
+    box-shadow: none;
+  } */
+  button:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

@@ -1,0 +1,198 @@
+.section {
+  width: 100%;
+  padding: 0 clamp(1rem, 4vw, 5rem);
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.grid {
+  width: 100%;
+  /* max-width: 1200px; */
+  display: flex;
+  flex-wrap: nowrap;
+  gap: clamp(1.25rem, 4vw, 5rem);
+  justify-content: center;
+  /* align-items: stretch; */
+  box-sizing: border-box;
+}
+
+.imageCard {
+  /* flex: 1 1 42%; */
+  min-width: 0;
+  height: 467px;
+  width: 560px;
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  border: 2.5px solid #2445cd80;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Grows with the row so the image fills the card when the text column is taller */
+.imageInner {
+  position: relative;
+  width: 100%;
+  /* flex: 1 1 auto; */
+  height: 100%;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+@media (hover: hover) {
+  .image:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+}
+
+.textCard {
+  /* flex: 1 1 42; */
+  min-width: 0;
+  width: 560px;
+  background: #f5f5f5;
+  border: 2.5px solid #2445cd80;
+  border-radius: 8px;
+  padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1.25rem, 4vw, 2.5rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1rem, 3vw, 2rem);
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.5vw + 0.85rem, 2.2rem);
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+}
+
+.subtitle {
+  font-size: clamp(0.95rem, 1vw + 0.85rem, 1.1rem);
+  font-weight: 700;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+}
+
+.body {
+  margin: 0;
+  font-size: clamp(0.85rem, 0.4vw + 0.8rem, 0.9rem);
+  line-height: 1.55;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.listItem {
+  display: flex;
+  align-items: flex-start;
+  gap: clamp(0.75rem, 2vw, 1rem);
+  min-width: 0;
+}
+
+.listIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background: #2445cd4d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listTitle {
+  font-size: clamp(0.9rem, 0.5vw + 0.8rem, 1rem);
+  font-weight: 700;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+}
+
+.listTextBlock {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.listBody {
+  font-size: clamp(0.85rem, 0.35vw + 0.78rem, 0.9rem);
+  font-weight: 500;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+  line-height: 1.45;
+}
+
+/* Stack: image first, then copy (matches reading order on small screens) */
+@media (max-width: 980px) {
+  .grid {
+    flex-direction: column-reverse !important;
+    align-items: stretch;
+    max-width: 640px;
+  }
+
+  .imageCard,
+  .textCard {
+    flex: none;
+    max-width: none;
+    height: fit-content;
+  }
+
+  .imageCard {
+    display: block;
+  }
+
+  .imageInner {
+    flex: none;
+    min-height: 220px;
+    aspect-ratio: 16 / 10;
+  }
+}
+
+@media (max-width: 670px) {
+  .section {
+    padding-left: clamp(0.75rem, 3vw, 1rem);
+    padding-right: clamp(0.75rem, 3vw, 1rem);
+  }
+  .title{
+    font-size: 1.5rem;
+  }
+  .textCard {
+    width: 100%;
+  }
+  .imageCard {
+    width: 100%;
+  }
+  .imageInner {
+    aspect-ratio: 12 / 6;
+  }
+  .listIcon {
+    width: 36px;
+    height: 36px;
+  }
+}

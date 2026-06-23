@@ -1,0 +1,129 @@
+.section {
+  width: 100%;
+  background: #f8fafc;
+  padding: 3rem 1.5rem 4.5rem;
+  flex: 1;
+}
+
+.inner {
+  max-width: 661px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font-size: 2.25rem;
+  line-height: 1.15;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 0.65rem 0 0;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: #64748b;
+  font-weight: 400;
+}
+
+.card {
+  margin-top: 2.25rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 2rem 2rem 1.75rem;
+  text-align: left;
+  box-shadow: 0 10px 40px rgba(15, 23, 42, 0.08);
+}
+
+.emailRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.iconWrap {
+  flex-shrink: 0;
+  color: #3b82f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.emailBlock {
+  min-width: 0;
+}
+
+.emailHeading {
+  margin: 0;
+  font-size: 1.0625rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.emailLink {
+  display: inline-block;
+  margin-top: 0.45rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.emailLink:hover {
+  text-decoration: underline;
+  transform: none;
+  box-shadow: none;
+}
+
+.divider {
+  margin: 1.5rem 0 1.25rem;
+  height: 1px;
+  background: #e2e8f0;
+  border: 0;
+}
+
+.disclaimer {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #64748b;
+}
+
+.inlineLink {
+  color: #2563eb;
+  font-weight: 600;
+  padding-left: 3px;
+  text-decoration: none;
+}
+
+.inlineLink:hover {
+  text-decoration: underline;
+  transform: none;
+  box-shadow: none;
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 0rem 1.5rem;
+    padding-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .card {
+    padding: 1.5rem 1.25rem;
+  }
+  .subtitle{
+    font-size: 0.9rem;
+  }
+  .divider{
+    margin: 1rem 0 1.25rem;
+  }
+}

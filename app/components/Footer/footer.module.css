@@ -1,0 +1,127 @@
+.footer {
+  background: #40455b;
+  color: #ffffff;
+  padding: clamp(2.5rem, 5vw, 3.5rem) 0 clamp(1.5rem, 3vw, 2rem);
+  overflow: hidden;
+}
+
+.footerInner {
+  margin: 0 auto;
+  padding: 0 clamp(2rem, 6vw, 6rem);
+  max-width: 1440px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: start;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column:nth-child(2) {
+  justify-self: center;
+}
+
+.column:nth-child(3) {
+  justify-self: end;
+}
+
+.pillStack {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.pillLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(245, 247, 254, 0.4);
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  width: fit-content;
+  text-align: center;
+  white-space: nowrap;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.pillLink:hover {
+  background: rgba(255, 255, 255, 0.28);
+  border-color: rgba(255, 255, 255, 0.55);
+}
+
+.logoMark {
+  width: 100%;
+  margin-top: clamp(2.5rem, 7vw, 5rem);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  pointer-events: none;
+  user-select: none;
+}
+
+.logoImage {
+  width: min(100%, 1320px);
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 1024px) {
+  .columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .column:nth-child(2),
+  .column:nth-child(3) {
+    justify-self: start;
+  }
+
+  .column:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 720px) {
+  .footerInner {
+    padding: 0 1.25rem;
+  }
+
+  .columns {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .column:nth-child(2),
+  .column:nth-child(3) {
+    justify-self: start;
+  }
+
+  .column:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .pillLink {
+    font-size: 0.72rem;
+    padding: 0.4rem 0.95rem;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .logoMark {
+    margin-top: 2rem;
+  }
+}

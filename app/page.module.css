@@ -1,0 +1,12 @@
+.page {
+  min-height: 100vh;
+  /* background: #f5f4e9; */
+  padding-top: 74px; /* space for fixed navbar */
+
+  /* background: #f5f4e9; */
+}
+
+.main {
+  width: 100%;
+}
+

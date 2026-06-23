@@ -1,0 +1,240 @@
+.section {
+  width: 100%;
+  padding: 0rem 1rem;
+  padding-bottom: 5rem;
+  overflow: hidden;
+}
+
+.inner {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.lastContent {
+  text-align: center;
+  font-weight: 700;
+  color: #000000;
+}
+
+.kicker {
+  font-size: 1.5rem;
+  color: #000000;
+  font-family: "Manrope", sans-serif !important;
+  letter-spacing: 0.03em;
+  font-weight: 700;
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* “Why It” + blue rule (reference) */
+.kickerWhy {
+  max-width: 1200px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.kickerEmphasis {
+  border-bottom: 3px solid #2445cd;
+  padding-bottom: 2px;
+  margin-right: 0.02em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(1.25rem, 2.5vw, 2rem);
+  align-items: stretch;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 0.5rem;
+}
+
+/* No outer card border — only the gray mockup panel is framed */
+.cardWhy {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  max-width: none;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  min-height: 0;
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.graphicPanel {
+  position: relative;
+  width: 100%;
+  background: #F1F4FC;
+  overflow: hidden;
+  flex-shrink: 0;
+  border-radius: 12px;
+  border: 1px solid #e1e6ef;
+  box-sizing: border-box;
+}
+
+.graphicPanelMockup {
+  aspect-ratio: 4 / 3;
+  min-height: 160px;
+}
+
+.graphicPanelStub {
+  aspect-ratio: 4 / 3;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.graphicImageWrap {
+  position: absolute;
+  box-sizing: border-box;
+}
+
+.graphicImageWrapPad {
+  top: clamp(14px, 3vw, 22px);
+  left: clamp(14px, 3vw, 22px);
+  right: clamp(14px, 3vw, 22px);
+  bottom: 0;
+}
+
+.graphicImage {
+  display: block;
+}
+
+.graphicImageContain {
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.graphicIcon {
+  font-size: 2.5rem;
+  color: #2445cd;
+  opacity: 0.85;
+}
+
+.graphicFallback {
+  font-family: "Manrope", sans-serif !important;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #c5ced9;
+  line-height: 1;
+}
+
+.cardText {
+  padding: 0 2px 4px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1 1 auto;
+  min-height: 0;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: clamp(0.9rem, 0.35vw + 0.82rem, 1rem);
+  line-height: 1.4;
+  font-weight: 600;
+  color: #111827;
+  font-family: "Manrope", sans-serif !important;
+  text-align: left;
+}
+
+.cardBody {
+  margin: 0;
+  font-size: clamp(0.82rem, 0.3vw + 0.76rem, 0.92rem);
+  line-height: 1.45;
+  font-weight: 500;
+  color: #4b5563;
+  font-family: "Manrope", sans-serif !important;
+  text-align: left;
+}
+
+.captionNumber {
+  font-weight: 600;
+  color: #111827;
+}
+
+.swiperWrap {
+  width: 100%;
+}
+
+.swiper {
+  width: 100%;
+  padding-bottom: 2.75rem;
+}
+
+.slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  box-sizing: border-box;
+  padding-bottom: 0.75rem;
+  height: auto;
+}
+
+.slide .cardWhy {
+  width: 100%;
+  max-width: min(420px, 100%);
+}
+
+.swiperWrap :global(.swiper-pagination) {
+  bottom: 0;
+}
+
+.swiperWrap :global(.swiper-pagination-bullet) {
+  width: 8px;
+  height: 8px;
+  background: #2445cd4d;
+  opacity: 1;
+}
+
+.swiperWrap :global(.swiper-pagination-bullet-active) {
+  background: #2445cd;
+}
+
+@media (max-width: 1140px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .section {
+    padding: 0rem 1.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .inner {
+    padding: 0;
+  }
+
+  .kicker,
+  .kickerWhy {
+    max-width: none;
+    text-align: center;
+  }
+
+  .kickerEmphasis {
+    margin-right: 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,105 @@
+.section {
+  padding: clamp(3.5rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
+  background: #ffffff;
+}
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: start;
+}
+
+.label {
+  margin: 0 0 0.75rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #2445cd;
+}
+
+.title {
+  margin: 0 0 1.5rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(1.85rem, 2vw + 1rem, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.titleHighlight {
+  color: #2445cd;
+}
+
+.text {
+  margin: 0 0 1rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.text:last-of-type {
+  margin-bottom: 0;
+}
+
+.journeyCard {
+  background: #f8fafc;
+  border: 1px solid #e5eaf3;
+  border-radius: 14px;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+}
+
+.journeyTitle {
+  margin: 0 0 1.25rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.journeyList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.journeyItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.85rem 1rem;
+  background: #ffffff;
+  border-radius: 10px;
+  border: 1px solid #e8edf5;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1.45;
+}
+
+.journeyDot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  margin-top: 0.35rem;
+  border-radius: 50%;
+  background: #2445cd;
+}
+
+@media (max-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}

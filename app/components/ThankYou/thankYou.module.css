@@ -1,0 +1,176 @@
+.pageShell {
+  position: relative;
+  width: 100%;
+  min-height: min(70vh, 900px);
+  background: #eef1f6;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.decor {
+  position: absolute;
+  top: -8%;
+  right: -6%;
+  width: min(52vw, 480px);
+  height: min(52vw, 480px);
+  border-radius: 40% 60% 55% 45% / 45% 40% 60% 55%;
+  background: linear-gradient(
+    135deg,
+    rgba(200, 210, 230, 0.55) 0%,
+    rgba(220, 226, 240, 0.25) 50%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  /* max-width: 560px; */
+  padding: 3rem;
+  margin-bottom: 3rem;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.headline {
+  /* margin: 0 0 clamp(2rem, 5vw, 2.75rem); */
+  font-family: "Manrope", sans-serif !important;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #000000;
+  line-height: 1.25;
+}
+
+.cardStack {
+  position: relative;
+  margin-top: 0;
+  padding-top: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.badge {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  z-index: 2;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  /* box-shadow: 0 6px 20px rgba(34, 197, 94, 0.35); */
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: clamp(2rem, 4vw, 2.5rem) clamp(1.35rem, 4vw, 2rem)
+    clamp(1.75rem, 3vw, 2.25rem);
+  box-shadow: 0 16px 48px rgba(15, 23, 42, 0.08);
+  box-sizing: border-box;
+  text-align: left;
+  max-width: 651px;
+  position: relative;
+}
+
+.cardSection {
+  margin-bottom: 1.5rem;
+}
+
+.cardSection:last-of-type {
+  margin-bottom: 0;
+}
+
+.sectionTitle {
+  margin: 0 0 0.85rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.3;
+}
+
+.refBar {
+  width: 100%;
+  padding: 0.95rem 1.1rem;
+  background: #e8ecf2;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(0.9rem, 0.4vw + 0.85rem, 0.98rem);
+  color: #1a1a1a;
+  line-height: 1.45;
+}
+
+.refBar strong {
+  font-weight: 700;
+}
+
+.bodyText {
+  margin: 0 0 1rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(0.9rem, 0.35vw + 0.85rem, 0.98rem);
+  line-height: 1.6;
+  font-weight: 400;
+  color: #4a4a4a;
+}
+
+.bodyText:last-child {
+  margin-bottom: 0;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.75rem;
+  width: 100%;
+  padding: 0.85rem 1.5rem;
+  background: #2445cd;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius:10px;
+  transition: background 0.2s ease, transform 0.2s ease;
+  box-sizing: border-box;
+}
+
+.cta:hover {
+  background: #1d38a8;
+  transform: translateY(-1px);
+}
+
+.ctaIcon {
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .badge {
+    width: 52px;
+    height: 52px;
+  }
+
+  .cta {
+    padding: 0.8rem 1.25rem;
+  }
+}

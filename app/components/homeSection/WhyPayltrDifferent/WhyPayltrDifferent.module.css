@@ -1,0 +1,230 @@
+.section {
+  width: 100%;
+  padding: 0rem 5rem;
+  margin-bottom: 5rem;
+  font-family: "Manrope", sans-serif !important;
+  background: #ffffff;
+}
+
+.inner {
+  /* max-width: 900px; */
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+.Header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.kicker {
+  /* margin: 0 0 0.75rem; */
+  font-size: 1rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #2445cd;
+}
+
+.headline {
+  /* margin: 0 0 1rem; */
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+
+.lead {
+  /* margin: 0 auto 2.5rem; */
+  max-width:80%;
+  font-size: 1rem;
+  line-height: 1.65;
+  font-weight: 700;
+  color: #242424;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.compare {
+  width: 900px;
+}
+
+.compareGrid {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(15, 42, 78, 0.08);
+  border: 1px solid rgba(15, 42, 78, 0.08);
+}
+
+.compareRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  min-width: 0;
+}
+
+.compareRow:nth-child(n + 3) {
+  border-top: 1px solid #ffffff;
+}
+
+.columnHeaderOld {
+  padding: 1rem 1.25rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: #4b5563;
+  text-align: left;
+  font-family: "Manrope", sans-serif !important;
+  text-transform: uppercase;
+}
+
+.columnHeaderPayltr {
+  padding: 1rem 1.25rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: #1e40af;
+  text-align: left;
+  font-family: "Manrope", sans-serif !important;
+  text-transform: uppercase;
+}
+
+.cellOld,
+.cellPayltr {
+  margin: 0;
+  padding: 0.95rem 1.1rem;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.45;
+  font-family: "Manrope", sans-serif !important;
+  text-align: left;
+  min-width: 0;
+}
+
+.cellOld {
+  background: #e5e7eb;
+  color: #0f172a;
+}
+
+.cellPayltr {
+  background: #ced9f5;
+  color:  #0f172a;
+}
+
+.footnote {
+  font-size: 1.2rem;
+  font-weight: 700;
+  font-family: "Manrope", sans-serif !important;
+  color: #242424;
+  line-height: 1.5;
+}
+.ctaWrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.cta{
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-family: "Manrope", sans-serif !important;
+  color: white;
+  background: #2445cd;
+  padding: 0.6rem 1.5rem;
+  border-radius: 10px;
+  line-height: 1.5;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  white-space: nowrap;
+}
+.cta:hover{
+  transform: translateY(-2px);
+}
+@media (max-width: 900px) {
+  .section {
+    padding: 0rem 3rem;
+  }
+  .compare {
+    width: 100%;
+  }
+  .lead{
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media (max-width: 720px) {
+  .section {
+    padding: 3rem 1.25rem 3.5rem;
+  }
+
+  .lead {
+    margin-bottom: 1.75rem;
+    font-size: 0.95rem;
+  }
+
+  .compareRow {
+    grid-template-columns: 1fr;
+  }
+
+  /* When stacked, separate the two cells in each comparison row */
+  .compareRow:not(:first-child) .cellPayltr {
+    border-top: 1px solid #ffffff;
+  }
+
+  .cellOld,
+  .cellPayltr {
+    font-size: 0.85rem;
+    padding: 0.85rem 1rem;
+  }
+}
+
+@media (max-width: 680px) {
+  .section {
+    padding: 0rem 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .inner{
+    gap: 1.5rem;
+  }
+  .Header{
+    gap: 1rem;
+  }
+  .headline{
+    font-size: 1.5rem;
+  }
+  .kicker{
+    font-size: 0.9rem;  
+  }
+  .lead{
+    font-size: 0.9rem;
+    margin-bottom: 0rem;
+  }
+  .footnote{
+    font-size: 0.9rem;
+  }
+  .compareGrid{
+    gap: 1rem;
+    box-shadow: none;
+    border: none;
+    border-radius: 0px;
+  }
+  .columnHeaderOld,
+  .columnHeaderPayltr{
+    font-size: 1rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  .cellOld,
+  .cellPayltr {
+    font-size: 0.9rem;
+  }
+}

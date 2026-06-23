@@ -1,0 +1,114 @@
+.section {
+  width: 100%;
+  padding: clamp(1.25rem, 4vw, 2.5rem) clamp(1rem, 5vw, 5rem);
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner {
+  width: 100%;
+  max-width: 72rem;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 48rem;
+  padding-inline: clamp(0.25rem, 2vw, 0);
+}
+
+.title {
+  margin: 0;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-size:3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  /* letter-spacing: clamp(0.04em, 0.1vw, 0.05em); */
+  color: #1f2937;
+  max-width: 100%;
+  text-wrap: balance;
+}
+
+.subcopy {
+  margin: 0;
+  text-align: center;
+  font-family: "Manrope", sans-serif;
+  font-size: clamp(0.8125rem, 0.35vw + 0.75rem, 1rem);
+  font-weight: 500;
+  line-height: 1.55;
+  color: #4b5563;
+  max-width: 36rem;
+}
+
+.logosRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content:space-evenly;
+  width: 100%;
+  gap: clamp(1rem, 4vw, 3rem);
+  row-gap: clamp(1rem, 3vw, 1.75rem);
+  opacity: 0.8;
+  padding-inline: 0.25rem;
+}
+
+.logo {
+  height: clamp(2.75rem, 10vw, 5rem);
+  width: auto;
+  max-width: min(42vw, 11rem);
+  min-width: 0;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+@media (max-width: 900px) {
+  .logosRow {
+    justify-content: space-evenly;
+  }
+
+  .logo {
+    max-width: min(38vw, 10rem);
+  }
+}
+
+@media (max-width: 680px) {
+  .title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .logosRow {
+    /* flex-direction: column; */
+    gap: 1.25rem;
+  }
+
+  .logo {
+    max-width: auto;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .section {
+    padding-inline: 0.75rem;
+  }
+  .logo {
+    height: 2rem;
+  }
+}

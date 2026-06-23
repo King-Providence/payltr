@@ -1,0 +1,556 @@
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.topBlocks {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 clamp(2rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ---- Blue financing banner ---- */
+.financingBanner {
+  position: relative;
+  width: 100%;
+  padding: clamp(2.25rem, 3.5vw, 3rem) clamp(1.5rem, 3vw, 2.25rem);
+  background: #2445cd;
+  border-radius: 16px;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.bannerPattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  background-image: url("/assets/Circle.png");
+  background-size: cover;
+  background-position: center right;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.bannerInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1px minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: stretch;
+}
+
+.bannerCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.bannerCol:first-child {
+  padding-right: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.bannerCol:last-child {
+  padding-left: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+.bannerTitle {
+  margin: 0;
+  font-size: clamp(1.65rem, 1.8vw + 1.1rem, 2.35rem);
+  line-height: 1.2;
+  font-weight: 700;
+  font-family: "Manrope", sans-serif !important;
+  letter-spacing: -0.025em;
+  max-width: 420px;
+}
+
+.bannerSubheading {
+  margin: 1rem 0 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: "Manrope", sans-serif !important;
+  opacity: 0.95;
+}
+
+.bannerIntro {
+  margin: 1.35rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  font-weight: 400;
+  font-family: "Manrope", sans-serif !important;
+  max-width: 400px;
+}
+
+.bannerList {
+  margin: 0.85rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.bannerList li {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  font-weight: 400;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.bannerList li::before {
+  content: "* ";
+}
+
+.bannerDivider {
+  width: 1px;
+  background: rgba(255, 255, 255, 0.4);
+  align-self: stretch;
+}
+
+.benefitsHeading {
+  margin: 0;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.benefitsList {
+  margin-top: 1.35rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.benefitItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-width: 400px;
+}
+
+.benefitTitle {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.35;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.benefitBody {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  font-weight: 400;
+  opacity: 0.92;
+  font-family: "Manrope", sans-serif !important;
+}
+
+/* ---- Partner section ---- */
+.partnerSection {
+  width: 100%;
+  padding: clamp(2.25rem, 3.5vw, 3rem) clamp(1.5rem, 3vw, 2.25rem);
+  background: #f1f3f8;
+  border-radius: 16px;
+}
+
+.partnerInner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(2rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+.partnerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  padding-right: clamp(0rem, 2vw, 1rem);
+}
+
+.partnerTitle {
+  margin: 0;
+  font-size: clamp(1.65rem, 1.6vw + 1.1rem, 2.15rem);
+  line-height: 1.22;
+  font-weight: 700;
+  color: #0f0f0f;
+  font-family: "Manrope", sans-serif !important;
+  letter-spacing: -0.025em;
+  max-width: 440px;
+}
+
+.partnerDescription {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  font-weight: 400;
+  color: #2a2f38;
+  font-family: "Manrope", sans-serif !important;
+  max-width: 400px;
+}
+
+.partnerBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  margin-top: 0.25rem;
+  padding: 0.7rem 1.35rem;
+  border-radius: 10px;
+  background: #2445cd;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif !important;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.partnerBtn:hover {
+  background: #1d38a8;
+  transform: translateY(-1px);
+}
+
+.partnerCardWrap {
+  position: relative;
+  justify-self: end;
+  width: 100%;
+  max-width: 420px;
+}
+
+.partnerStar {
+  position: absolute;
+  top: -6px;
+  right: 18px;
+  z-index: 2;
+  font-size: 1.35rem;
+  line-height: 1;
+  color: #a8c4ff;
+  pointer-events: none;
+}
+
+.partnerCard {
+  position: relative;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.65rem 1.5rem 1.75rem;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06);
+  border: 1px solid #e6ebf2;
+}
+
+.partnerCardTitle {
+  margin: 0 0 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #0f0f0f;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.partnerCardList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.partnerCardList li {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #2a2f38;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.partnerCardList li::before {
+  content: "* ";
+}
+
+/* ---- How it works ---- */
+.howSection {
+  width: 100%;
+  padding: clamp(3rem, 4vw, 4rem) clamp(2rem, 4vw, 3rem)
+    clamp(3.5rem, 5vw, 5rem) clamp(4rem, 11vw, 8rem);
+  background: #ffffff;
+  box-sizing: border-box;
+}
+
+.howInner {
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2.5rem, 4vw, 3.5rem);
+  box-sizing: border-box;
+}
+
+.howHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.howHeaderText {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.howTitle {
+  margin: 0;
+  font-size: clamp(2.25rem, 2.2vw + 1.25rem, 3rem);
+  line-height: 1.08;
+  font-weight: 700;
+  color: #0f0f0f;
+  font-family: "Manrope", sans-serif !important;
+  letter-spacing: -0.03em;
+}
+
+.howSubtitle {
+  margin: 0.65rem 0 0;
+  font-size: clamp(1.1rem, 0.8vw + 0.95rem, 1.45rem);
+  font-weight: 400;
+  line-height: 1.35;
+  color: #0f0f0f;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.howBtn {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1.35rem;
+  border-radius: 10px;
+  background: #2445cd;
+  color: #ffffff;
+  font-size: 0.88rem;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif !important;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.howBtn:hover {
+  background: #1d38a8;
+  transform: translateY(-1px);
+}
+
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(3rem, 6vw, 5rem);
+  row-gap: clamp(2.5rem, 4vw, 3.75rem);
+}
+
+.stepCard {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+  max-width: none;
+  width: 100%;
+}
+
+.stepCol1 {
+  justify-self: start;
+}
+
+.stepCol2 {
+  justify-self: start;
+}
+
+.stepCard:nth-child(5) {
+  grid-column: 1;
+}
+
+.stepIcon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  object-fit: contain;
+}
+
+.stepLabel {
+  margin: 0;
+  font-size: clamp(1.75rem, 1.5vw + 1.25rem, 2.5rem);
+  font-weight: 700;
+  color: #0f0f0f;
+  font-family: "Manrope", sans-serif !important;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.stepTitle {
+  margin: 0;
+  font-size: clamp(1.25rem, 1vw + 1rem, 1.75rem);
+  font-weight: 700;
+  color: #0f0f0f;
+  font-family: "Manrope", sans-serif !important;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.stepDescription {
+  margin: 0.65rem 0 0;
+  font-size: clamp(1rem, 0.4vw + 0.9rem, 1.25rem);
+  line-height: 1.5;
+  font-weight: 500;
+  color: #2a2f38;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.stepList {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.stepList li {
+  font-size: clamp(1rem, 0.4vw + 0.9rem, 1.25rem);
+  line-height: 1.5;
+  font-weight: 500;
+  color: #2a2f38;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.stepList li::before {
+  content: "* ";
+}
+
+.stepFlow {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.flowItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.flowItem p {
+  margin: 0;
+  font-size: clamp(1rem, 0.4vw + 0.9rem, 1.25rem);
+  line-height: 1.5;
+  font-weight: 500;
+  color: #2a2f38;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.flowArrow {
+  display: block;
+  margin: 0.2rem 0;
+  font-size: 0.8rem;
+  color: #6b7280;
+  line-height: 1;
+}
+
+@media (max-width: 960px) {
+  .howSection {
+    padding-left: clamp(2.5rem, 8vw, 4rem);
+    padding-right: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .bannerInner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .bannerDivider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .bannerCol:first-child,
+  .bannerCol:last-child {
+    padding: 0;
+  }
+
+  .partnerInner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .partnerCardWrap {
+    justify-self: stretch;
+    max-width: none;
+  }
+
+  .stepsGrid {
+    grid-template-columns: 1fr;
+    row-gap: 2.5rem;
+  }
+
+  .stepCard:nth-child(5) {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .topBlocks {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .howSection {
+    padding-left: clamp(2rem, 6vw, 3rem);
+    padding-right: 1.25rem;
+  }
+
+  .howInner {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .financingBanner,
+  .partnerSection {
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .stepLabel {
+    font-size: 1.75rem;
+  }
+
+  .stepTitle {
+    font-size: 1.35rem;
+  }
+
+  .stepDescription,
+  .stepList li,
+  .flowItem p {
+    font-size: 1rem;
+  }
+
+  .howHeader {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.25rem;
+  }
+
+  .howBtn {
+    width: 100%;
+    text-align: center;
+  }
+}

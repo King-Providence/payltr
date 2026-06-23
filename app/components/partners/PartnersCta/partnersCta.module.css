@@ -1,0 +1,60 @@
+.section {
+  width: 100%;
+  padding: clamp(3.5rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
+  background: #eef2f8;
+  box-sizing: border-box;
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1.1rem;
+}
+
+.title {
+  margin: 0;
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(1.75rem, 2vw + 1rem, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: #0f0f0f;
+}
+
+.subtitle {
+  margin: 0;
+  max-width: 560px;
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(1rem, 0.4vw + 0.95rem, 1.15rem);
+  line-height: 1.6;
+  font-weight: 500;
+  color: #4b5563;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+  padding: 0.8rem 1.85rem;
+  border-radius: 999px;
+  background: #2445cd;
+  border: 1px solid #2445cd;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.cta:hover {
+  background: #1d38a8;
+  transform: translateY(-1px);
+}

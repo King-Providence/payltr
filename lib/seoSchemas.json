@@ -1,0 +1,112 @@
+{
+  "financialService": {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "PayLTR",
+    "url": "https://payltr.eu",
+    "logo": "https://payltr.eu/assets/companyLogo.svg",
+    "description": "PayLTR biedt zakelijke financiering aan Nederlands MKB met 120 dagen betalingspauze en 0% rente op terugbetaling.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[Jouw postadres Rotterdam]",
+      "addressLocality": "Rotterdam",
+      "addressRegion": "Zuid-Holland",
+      "postalCode": "[Postcode]",
+      "addressCountry": "NL"
+    },
+    "telephone": "+31684925325",
+    "email": "info@payltr.eu",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Netherlands"
+    },
+    "serviceType": "Zakelijke Financiering",
+    "currenciesAccepted": "EUR",
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "08:00",
+      "closes": "18:00"
+    }
+  },
+  "faq": {
+    "shared": [
+      {
+        "question": "Wat is PayLTR?",
+        "answer": "PayLTR is een zakelijk financieringsplatform voor Nederlands MKB. Je kunt bedrijfskosten vandaag betalen en later terugbetalen: tot 120 dagen betalingspauze, daarna 24 maanden met 0% rente op terugbetaling."
+      },
+      {
+        "question": "Hoeveel kan ik lenen bij PayLTR?",
+        "answer": "Je kunt zakelijke financiering aanvragen van €3.000 tot €500.000. Het goedgekeurde bedrag hangt af van de cashflow en financiële gezondheid van je bedrijf."
+      },
+      {
+        "question": "Hoe werkt de 120-dagen betalingspauze?",
+        "answer": "Na uitbetaling heb je tot 120 dagen zonder aflossing. Daarna betaal je in vaste maandtermijnen terug. Tijdens de pauze geldt een gebruiksvergoeding."
+      },
+      {
+        "question": "Kan ik vervroegd aflossen?",
+        "answer": "Ja. Vervroegd aflossen is altijd toegestaan zonder boete."
+      }
+    ]
+  },
+  "breadcrumbs": {
+    "/over-ons": [
+      { "name": "Home", "path": "/" },
+      { "name": "Over PayLTR", "path": "/over-ons" }
+    ],
+    "/contact": [
+      { "name": "Home", "path": "/" },
+      { "name": "Contact", "path": "/contact" }
+    ],
+    "/producten": [
+      { "name": "Home", "path": "/" },
+      { "name": "Producten", "path": "/producten" }
+    ],
+    "/hoe-het-werkt": [
+      { "name": "Home", "path": "/" },
+      { "name": "Hoe Het Werkt", "path": "/hoe-het-werkt" }
+    ],
+    "/cashflow-analyse": [
+      { "name": "Home", "path": "/" },
+      { "name": "Cashflow Analyse", "path": "/cashflow-analyse" }
+    ],
+    "/aanvragen": [
+      { "name": "Home", "path": "/" },
+      { "name": "Aanvragen", "path": "/aanvragen" }
+    ],
+    "/gebruik/btw-financiering": [
+      { "name": "Home", "path": "/" },
+      { "name": "Gebruik", "path": "/gebruik" },
+      { "name": "BTW Financiering", "path": "/gebruik/btw-financiering" }
+    ],
+    "/gebruik/voorraad-financiering": [
+      { "name": "Home", "path": "/" },
+      { "name": "Gebruik", "path": "/gebruik" },
+      { "name": "Voorraad Financiering", "path": "/gebruik/voorraad-financiering" }
+    ],
+    "/gebruik/marketing-financiering": [
+      { "name": "Home", "path": "/" },
+      { "name": "Gebruik", "path": "/gebruik" },
+      { "name": "Marketing Financiering", "path": "/gebruik/marketing-financiering" }
+    ],
+    "/gebruik/projectfinanciering": [
+      { "name": "Home", "path": "/" },
+      { "name": "Gebruik", "path": "/gebruik" },
+      { "name": "Projectfinanciering", "path": "/gebruik/projectfinanciering" }
+    ],
+    "/privacybeleid": [
+      { "name": "Home", "path": "/" },
+      { "name": "Privacybeleid", "path": "/privacybeleid" }
+    ],
+    "/algemene-voorwaarden": [
+      { "name": "Home", "path": "/" },
+      { "name": "Algemene Voorwaarden", "path": "/algemene-voorwaarden" }
+    ]
+  }
+}

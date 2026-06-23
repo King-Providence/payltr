@@ -1,0 +1,722 @@
+.page {
+  min-height: 100vh;
+  padding-top: 74px;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.main {
+  width: 100%;
+}
+
+.auditGrid {
+  /* max-width: 1240px; */
+  /* margin: 0 auto; */
+  /* padding: 18px 44px 44px; */
+  padding:0rem 5rem;
+  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:4rem;
+  align-items: start;
+}
+
+.leftCol,
+.rightCol {
+  width: 100%;
+}
+
+.heading {
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #0f2a4e;
+}
+
+.subheading {
+  margin: 8px 0 16px;
+  font-size: 0.95rem;
+  color: #6b7a90;
+  line-height: 1.55;
+}
+
+.resultsIntro {
+  margin: 8px 0 16px;
+  font-size: 0.95rem;
+  color: #6b7a90;
+  line-height: 1.55;
+}
+
+.resultsCtaWrap {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.formCard {
+  background: #f9fafc;
+  border: 1px solid rgba(15, 42, 78, 0.08);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.label {
+  font-size: 0.86rem;
+  font-weight: 900;
+  color: #0f2a4e;
+  margin-bottom: 8px;
+}
+
+.input,
+.select {
+  width: 100%;
+  height: 42px;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 42, 78, 0.1);
+  background: #f3f4f6;
+  padding: 0 12px;
+  font-size: 0.95rem;
+  outline: none;
+  color: #111827;
+}
+
+.select {
+  cursor: pointer;
+}
+
+.helper {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: #7b6d5e;
+}
+
+.sliderField {
+  margin-top: 8px;
+}
+
+.sliderHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.sliderValue {
+  font-size: 0.86rem;
+  font-weight: 900;
+  color: #2f6bff;
+}
+
+.range {
+  width: 100%;
+  margin-top: 14px;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  background: linear-gradient(
+    90deg,
+    #0b5cff 0%,
+    #0b5cff var(--fillPercent, 50%),
+    #cfe0ff var(--fillPercent, 50%),
+    #cfe0ff 100%
+  );
+  border-radius: 999px;
+  outline: none;
+}
+
+.range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #c1d1ff;
+  box-shadow: 0 8px 20px rgba(47, 107, 255, 0.12);
+}
+
+.range::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #c1d1ff;
+  box-shadow: 0 8px 20px rgba(47, 107, 255, 0.12);
+}
+
+.calcBtn {
+  width: 100%;
+  margin-top: 16px;
+  height: 46px;
+  border: 0;
+  border-radius: 12px;
+  background: #0b5cff;
+  color: #ffffff;
+  font-weight: 900;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+}
+
+.indicatorCard {
+  background: #fff2eb;
+  border-radius: 14px;
+  padding: 18px;
+  border: 1px solid rgba(249, 115, 22, 0.12);
+}
+
+.indicatorTitle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+  font-size: 1rem;
+  color: #f97316;
+}
+.indicatorTitle span {
+  color: #000000;
+}
+
+.pressureLabel {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #000000;
+}
+
+.indicatorText {
+  margin-top: 6px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #4b5563;
+}
+
+.payLaterTitle {
+  margin-top: 18px;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #0f2a4e;
+}
+
+.planCard {
+  margin-top: 12px;
+  border-radius: 14px;
+  padding: 18px;
+  background: #eef4ff;
+  border: 1px solid rgba(15, 42, 78, 0.06);
+}
+
+.planTitle {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #0f2a4e;
+}
+
+.planSubtitle {
+  margin-top: 4px;
+  font-size: 0.95rem;
+  color: #47607a;
+}
+
+.planRow {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 14px;
+  align-items: center;
+}
+
+.planRowLabel {
+  font-size: 0.92rem;
+  color: #47607a;
+  font-weight: 800;
+}
+
+.planRowValue {
+  font-size: 0.92rem;
+  font-weight: 900;
+  color: #0f2a4e;
+  white-space: nowrap;
+}
+
+.metricsRow {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.metricBlue,
+.metricGreen,
+.metricPurple {
+  border-radius: 14px;
+  padding: 14px 12px;
+  text-align: center;
+}
+
+.metricBlue {
+  background: #eaf1ff;
+  border: 1px solid rgba(66, 99, 235, 0.18);
+}
+
+.metricGreen {
+  background: #eafff1;
+  border: 1px solid rgba(0, 170, 90, 0.16);
+}
+
+.metricPurple {
+  background: #f5edff;
+  border: 1px solid rgba(138, 124, 247, 0.18);
+}
+
+.metricBig {
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: #2445cd;
+  letter-spacing: -0.02em;
+}
+
+.metricSmall {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #5b78c7;
+}
+
+.metricBigGreen {
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: #08a05a;
+  letter-spacing: -0.02em;
+}
+
+.metricSmallGreen {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #2a7d52;
+}
+
+.metricBigPurple {
+  font-size: 1.65rem;
+  font-weight: 900;
+  color: #7c3aed;
+  letter-spacing: -0.02em;
+}
+
+.metricSmallPurple {
+  margin-top: 6px;
+  font-size: 0.85rem;
+  font-weight: 900;
+  color: #6d28d9;
+  text-transform: lowercase;
+}
+
+.noteBox {
+  margin-top: 16px;
+  background: #eaf3ff;
+  border-radius: 14px;
+  padding: 14px 16px;
+  border: 1px solid rgba(66, 99, 235, 0.1);
+  color: #4b5563;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+.bottomCta {
+  margin-top: 26px;
+}
+
+.bottomInner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 44px 56px;
+}
+
+.bottomTitle {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 900;
+  color: #0f2a4e;
+}
+
+.bottomLead {
+  margin: 10px 0 18px;
+  font-size: 1.05rem;
+  color: #4b5563;
+  line-height: 1.7;
+  max-width: 640px;
+}
+
+.bottomBtn {
+  border-radius: 12px;
+  height: 46px;
+  padding: 0 18px;
+  border: 0;
+  background: #0b5cff;
+  color: #ffffff;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.bottomDisclosures {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.bottomDisclosure {
+  font-weight: 900;
+  color: #0f2a4e;
+  background: transparent;
+}
+
+.graphSection {
+  margin-top: 18px;
+}
+
+.graphCard {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 18px 44px 26px;
+}
+
+.graphTitle {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #0f2a4e;
+  margin-bottom: 14px;
+}
+
+.chartArea {
+  background: #ffffff;
+  border: 1px solid rgba(15, 42, 78, 0.08);
+  border-radius: 16px;
+  padding: 14px 18px 8px;
+}
+
+.plot {
+  position: relative;
+}
+
+.gridLine {
+  position: absolute;
+  left: 56px;
+  right: 0;
+  border-top: 2px dashed #e5e7eb;
+}
+
+.zeroLine {
+  position: absolute;
+  left: 56px;
+  right: 0;
+  border-top: 2px solid #e5e7eb;
+}
+
+.yLabel {
+  position: absolute;
+  left: 0;
+  width: 56px;
+  text-align: right;
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 700;
+  transform: translateY(-50%);
+}
+
+.barsFlex {
+  position: absolute;
+  left: 56px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.daySlot {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.barBlue,
+.barRed {
+  position: absolute;
+  width: 10px;
+  border-radius: 6px;
+}
+
+.barBlue {
+  left: 35%;
+  background: #2b6cff;
+}
+
+.barRed {
+  left: 65%;
+  background: #ef4444;
+}
+
+.xLabels {
+  margin-top: 6px;
+  display: flex;
+  gap: 10px;
+  padding-left: 56px;
+}
+
+.xLabel {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
+  font-weight: 700;
+}
+
+.legend {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding-bottom: 4px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.legendSwatchRed,
+.legendSwatchBlue {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.legendSwatchRed {
+  background: #ef4444;
+}
+
+.legendSwatchBlue {
+  background: #2b6cff;
+}
+
+
+@media (max-width: 1260px) {
+  .auditGrid {
+    padding:0rem 3rem;
+    margin-bottom: 5rem;
+  }
+}
+@media (max-width: 1200px) {
+  .auditGrid {
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .introSection {
+    padding: 18px 18px 0;
+  }
+
+  .auditGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding:0rem 3rem;
+  }
+
+  .bottomInner {
+    padding: 0 18px 46px;
+  }
+
+  .metricsRow {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .graphCard {
+    padding: 18px 18px 26px;
+  }
+}
+
+@media (max-width: 640px) {
+  .auditGrid {
+    padding:0rem 1.5rem;
+    margin-bottom: 3rem;
+  }
+  .heading{
+    font-size: 1.5rem;
+  }
+  .subheading{
+    font-size: 0.9rem;
+  }
+  .resultsIntro{
+    font-size: 0.9rem;
+  }
+  .indicatorText{
+    font-size: 0.9rem;
+  }
+  .planRow{
+    margin-top: 5px;
+  }
+  .planRowLabel{
+    font-size: 0.9rem;
+  }
+  .planRowValue{
+    font-size: 0.9rem;
+  }
+  .metricBig{
+    font-size: 1.2rem;
+  }
+  .metricSmall{
+    font-size: 0.8rem;
+  }
+  .planSubtitle{
+    font-size: 0.9rem;
+  }
+  .metricBigGreen{
+    font-size: 1.2rem;
+  }
+  .metricSmallGreen{
+    font-size: 0.8rem;
+  }
+  .metricBigPurple{
+    font-size: 1.2rem;
+  }
+  .formCard{
+    padding: 1rem;
+  }
+  .noteBox{
+    font-size: 0.9rem;
+  }
+}
+
+/* Bottom CTA section (mirrors readyToGetStarted styling) */
+.section {
+  background: #f1f4fc;
+  width: 100%;
+  text-align: center;
+  padding:66px 18px 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.title {
+  margin: 0;
+  font-size: 3rem;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  font-weight: 800;
+  color: #000000;
+}
+
+.subtitle {
+  /* margin: 10px auto 18px; */
+  max-width: 774px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #000000;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.secondaryCta{
+  border-radius: 10px;
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  border: 2px solid #4263EB;
+  color: #4263EB;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  transition: all 0.4s ease;
+}
+.secondaryCta:hover {
+  transform: translateY(-2px);
+}
+.cta {
+  border-radius: 10px;
+  padding: 0.6rem 1.5rem;
+  background: #4263eb;
+  border: 1px solid #4263eb;
+  color: #ffffff;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  transition: all 0.4s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 3rem 1.5rem;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .cta, .secondaryCta {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .buttonWrapper{
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 402px) {
+  .buttonWrapper{
+    gap: 1rem;
+    width: 100%;
+  }
+  .cta, .secondaryCta {
+    width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .buttonWrapper{
+    gap: 1rem;
+    flex-direction: column;
+  }
+}

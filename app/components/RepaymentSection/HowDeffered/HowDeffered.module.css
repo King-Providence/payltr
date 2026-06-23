@@ -1,0 +1,289 @@
+.section {
+  width: 100%;
+  padding: 0 clamp(1rem, 4vw, 5rem);
+  margin-bottom: clamp(2.5rem, 6vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: clamp(2rem, 4vw, 3rem);
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.grid {
+  width: 100%;
+  /* max-width: 1220px; */
+  display: flex;
+  flex-wrap: nowrap;
+  gap: clamp(1.25rem, 3vw, 3rem);
+  justify-content: center;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.imageCard {
+  /* flex: 1 1 42%; */
+  min-width: 0;
+  min-height: 0;
+  height: 467px;
+  width: 580px;
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  background: #f5f5f5;
+  border: 2.5px solid #2445cd80;
+  border-radius: 8px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Fills the card when the row is stretch-aligned to match the text column height */
+.imageInner {
+  position: relative;
+  width: 100%;
+  flex: 1 1 auto;
+  min-height: 240px;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.5s ease;
+}
+
+@media (hover: hover) {
+  .image:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+}
+
+.textCard {
+  /* flex: 1 1 42%; */
+  min-width: 0;
+  width: 580px;
+  /* width: 100%; */
+  background: #f5f5f5;
+  border: 2.5px solid #2445cd80;
+  border-radius: 8px;
+  padding: clamp(1.25rem, 3.5vw, 2.25rem) clamp(1.25rem, 3.5vw, 2.25rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(0.75rem, 2vw, 1rem);
+  justify-content: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(1.25rem, 2vw + 0.9rem, 1.8rem);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+}
+
+.subtitle {
+  font-size: clamp(0.95rem, 1vw + 0.85rem, 1.1rem);
+  font-weight: 700;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+}
+
+.lastContent {
+  font-size: clamp(0.85rem, 0.4vw + 0.8rem, 0.9rem);
+  font-weight: 800;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+  line-height: 1.45;
+}
+
+.body {
+  margin: 0;
+  font-size: clamp(0.85rem, 0.4vw + 0.8rem, 0.9rem);
+  line-height: 1.55;
+  font-weight: 500;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+}
+
+.keypointsContainer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(0.75rem, 2vw, 1rem);
+  width: 100%;
+}
+
+.keypointGroup {
+  min-width: 0;
+}
+
+.keyPointsTitle {
+  margin: 0 0 0.35rem;
+  font-size: clamp(0.9rem, 0.5vw + 0.82rem, 1rem);
+  font-weight: 700;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+}
+
+.keypoints {
+  list-style: none;
+  padding: 0.5rem 0 0 1rem;
+  margin: 0;
+}
+
+.keypointItem {
+  font-size: clamp(0.8rem, 0.35vw + 0.75rem, 0.85rem);
+  font-weight: 500;
+  list-style: disc;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+  line-height: 1.45;
+  margin-bottom: 0.35rem;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2vw, 1rem);
+  min-width: 0;
+}
+
+.listIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  background: #2445cd4d;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.listTitle {
+  font-size: clamp(0.9rem, 0.5vw + 0.8rem, 1rem);
+  font-weight: 700;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+}
+
+.listTextBlock {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.listBody {
+  font-size: clamp(0.85rem, 0.35vw + 0.78rem, 0.9rem);
+  font-weight: 500;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+  line-height: 1.45;
+}
+
+.newListContainer {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  /* align-items: stretch; */
+  gap: 0.65rem;
+  width: 100%;
+}
+
+.newListItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.newListIcon {
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background: #2445cd4d;
+}
+
+.newListContent {
+  font-size: clamp(0.85rem, 0.35vw + 0.78rem, 0.9rem);
+  font-weight: 500;
+  font-family: "Manrope", sans-serif !important;
+  color: #000000;
+  line-height: 1.45;
+  min-width: 0;
+}
+
+@media (max-width: 980px) {
+  .grid {
+    flex-direction: column-reverse !important;
+    align-items: stretch;
+    width: 500px;
+  }
+
+  .imageCard,
+  .textCard {
+    flex: none;
+    max-width: none;
+    height: fit-content;
+  }
+
+  .imageCard {
+    display: block;
+  }
+
+  /* Stacked layout: fixed visual proportion (row height is not tied to text) */
+  .imageInner {
+    flex: none;
+    min-height: 220px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .keypointsContainer {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding-left: clamp(0.75rem, 3vw, 1rem);
+    padding-right: clamp(0.75rem, 3vw, 1rem);
+  }
+  .grid {
+    width: 100%;
+  }
+  .imageCard {
+    width: 100%;
+  }
+  .textCard {
+    width: 100%;
+  }
+  .imageInner {
+    aspect-ratio: 12 / 6;
+  } 
+  .title{
+    font-size: 1.5rem;
+  }
+  .newListContainer{
+    grid-template-columns: 1fr; 
+    gap: 0.5rem;
+  }
+
+  .listIcon {
+    width: 36px;
+    height: 36px;
+  }
+}
