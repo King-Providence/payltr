@@ -28,16 +28,16 @@ export default function HowItWorksPage() {
     <div className={styles.page}>
       <Navbar />
       <main className={styles.main}>
-        <HowItWorksPageHero content={howItWorksPageHeroContent} />
-        <HowItWorksTimeline content={howItWorksTimelineContent} />
-        <HowItWorksJourney content={howItWorksJourneyContent} />
-        <HowItWorksBusinessReality content={howItWorksBusinessRealityContent} />
+        <HowItWorksPageHero content={translateUtilContent(howItWorksPageHeroContent, t)} />
+        <HowItWorksTimeline content={translateUtilContent(howItWorksTimelineContent, t)} />
+        <HowItWorksJourney content={translateUtilContent(howItWorksJourneyContent, t)} />
+        <HowItWorksBusinessReality content={translateUtilContent(howItWorksBusinessRealityContent, t)} />
         <FAQs
           details={translateUtilContent(howItWorksFaqContent, t)}
           defaultActiveIndex={0}
           centered
         />
-        <HowItWorksReadyToGetStarted content={getStartedContent} />
+        <HowItWorksReadyToGetStarted content={translateUtilContent(getStartedContent, t)} />
       </main>
       <Footer />
     </div>

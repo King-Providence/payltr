@@ -11,8 +11,6 @@ export default function HowItWorksJourney({ content }) {
     <section
       className={styles.section}
       aria-labelledby="how-it-works-journey-title"
-      data-i18n-skip="true"
-      translate="no"
     >
       <div className={styles.inner}>
         <div className={styles.header}>

@@ -12,8 +12,6 @@ export default function PartnersHero({ content }) {
     <section
       className={styles.hero}
       aria-labelledby="partners-hero-title"
-      data-i18n-skip="true"
-      translate="no"
     >
       <div className={styles.imageCol}>
         <Image

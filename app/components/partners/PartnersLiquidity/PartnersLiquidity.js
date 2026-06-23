@@ -11,8 +11,6 @@ export default function PartnersLiquidity({ content }) {
     <section
       className={styles.section}
       aria-labelledby="partners-liquidity-title"
-      data-i18n-skip="true"
-      translate="no"
     >
       <div className={styles.inner}>
         <header className={styles.header}>

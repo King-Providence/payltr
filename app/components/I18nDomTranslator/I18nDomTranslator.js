@@ -61,8 +61,9 @@ export default function I18nDomTranslator() {
   useEffect(() => {
     if (typeof document === "undefined") return;
 
-    const runId = ++runIdRef.current;
-    const lang = (i18n.resolvedLanguage || i18n.language || "en").slice(0, 2);
+    const timeoutId = setTimeout(() => {
+      const runId = ++runIdRef.current;
+      const lang = (i18n.resolvedLanguage || i18n.language || "en").slice(0, 2);
 
     const textNodes = [];
     const attrTargets = [];
@@ -170,6 +171,9 @@ export default function I18nDomTranslator() {
         }
       }
     })();
+    }, 60);
+
+    return () => clearTimeout(timeoutId);
   }, [pathname, i18n.language, i18n.resolvedLanguage]);
 
   useEffect(() => {

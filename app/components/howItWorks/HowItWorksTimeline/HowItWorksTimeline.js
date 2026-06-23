@@ -10,8 +10,6 @@ export default function HowItWorksTimeline({ content }) {
     <section
       className={styles.section}
       aria-label="PayLTR process steps"
-      data-i18n-skip="true"
-      translate="no"
     >
       <div className={styles.inner}>
         <ol className={styles.timeline}>

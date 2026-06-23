@@ -10,8 +10,6 @@ export default function HowItWorksBusinessReality({ content }) {
     <section
       className={styles.section}
       aria-labelledby="how-it-works-reality-title"
-      data-i18n-skip="true"
-      translate="no"
     >
       <div className={styles.inner}>
         <div className={styles.card}>

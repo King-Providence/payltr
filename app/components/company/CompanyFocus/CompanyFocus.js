@@ -8,7 +8,7 @@ export default function CompanyFocus({ content }) {
   const translated = useTranslatedContent(content);
 
   return (
-    <section className={styles.section} aria-labelledby="company-focus-title" data-i18n-skip="true" translate="no">
+    <section className={styles.section} aria-labelledby="company-focus-title">
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.label}>{translated.label}</p>

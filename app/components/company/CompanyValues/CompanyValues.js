@@ -9,7 +9,7 @@ export default function CompanyValues({ content }) {
   const iconSrc = translated.icon || "/assets/values.svg";
 
   return (
-    <section className={styles.section} aria-labelledby="company-values-title" data-i18n-skip="true" translate="no">
+    <section className={styles.section} aria-labelledby="company-values-title">
       <div className={styles.inner}>
         <header className={styles.header}>
           <p className={styles.label}>{translated.label}</p>

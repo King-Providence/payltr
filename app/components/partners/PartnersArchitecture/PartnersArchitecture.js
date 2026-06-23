@@ -22,8 +22,6 @@ export default function PartnersArchitecture({ content }) {
     <section
       className={styles.section}
       aria-labelledby="partners-architecture-title"
-      data-i18n-skip="true"
-      translate="no"
     >
       <div className={styles.inner}>
         <h2 id="partners-architecture-title" className={styles.title}>

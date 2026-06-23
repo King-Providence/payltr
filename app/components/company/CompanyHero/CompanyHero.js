@@ -12,8 +12,6 @@ export default function CompanyHero({ content }) {
     <section
       className={styles.hero}
       aria-labelledby="company-hero-title"
-      data-i18n-skip="true"
-      translate="no"
     >
       <div className={styles.backgroundImage} aria-hidden="true" />
 

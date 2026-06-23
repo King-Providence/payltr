@@ -7,7 +7,7 @@ export default function CompanyMission({ content }) {
   const translated = useTranslatedContent(content);
 
   return (
-    <section className={styles.section} aria-labelledby="company-mission-title" data-i18n-skip="true" translate="no">
+    <section className={styles.section} aria-labelledby="company-mission-title">
       <div className={styles.inner}>
         <div className={styles.left}>
           <p className={styles.label}>{translated.label}</p>

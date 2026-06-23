@@ -12,8 +12,6 @@ export default function HowItWorksPageHero({ content }) {
     <section
       className={styles.hero}
       aria-labelledby="how-it-works-hero-title"
-      data-i18n-skip="true"
-      translate="no"
     >
       <div className={styles.imageCol}>
         <Image

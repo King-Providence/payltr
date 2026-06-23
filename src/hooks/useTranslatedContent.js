@@ -2,15 +2,14 @@
 
 import { useTranslation } from "react-i18next";
 import { useMemo } from "react";
-import { translateUtilContent } from "@/lib/translateUtilContent"; 
-// (adjust path if needed)
+import { translateUtilContent } from "@/lib/translateUtilContent";
 
 export const useTranslatedContent = (data) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const translatedData = useMemo(() => {
     return translateUtilContent(data, t);
-  }, [data, t]);
+  }, [data, t, i18n.language, i18n.resolvedLanguage]);
 
   return translatedData;
 };

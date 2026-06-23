@@ -8,7 +8,7 @@ export default function CompanyCta({ content }) {
   const translated = useTranslatedContent(content);
 
   return (
-    <section className={styles.section} aria-labelledby="company-cta-title" data-i18n-skip="true" translate="no">
+    <section className={styles.section} aria-labelledby="company-cta-title">
       <div className={styles.inner}>
         <h2 id="company-cta-title" className={styles.title}>
           {translated.title}

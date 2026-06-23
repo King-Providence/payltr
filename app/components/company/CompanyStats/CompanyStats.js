@@ -7,7 +7,7 @@ export default function CompanyStats({ content }) {
   const translated = useTranslatedContent(content);
 
   return (
-    <section className={styles.section} aria-label="Company statistics" data-i18n-skip="true" translate="no">
+    <section className={styles.section} aria-label="Company statistics">
       <div className={styles.inner}>
         {translated.items.map((item) => (
           <div className={styles.stat} key={item.label}>
