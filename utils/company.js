@@ -6,7 +6,7 @@ export const companyHeroContent = {
   ctaPlatforms: "Partner with us",
   ctaPlatformsHref: "/partners",
   ctaSmes: "How it works",
-  ctaSmesHref: "/hoe-het-werkt",
+  ctaSmesHref: "/how-it-works",
   image: "/assets/home/homeHeroImage.png",
 };
 

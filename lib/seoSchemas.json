@@ -68,9 +68,9 @@
       { "name": "Home", "path": "/" },
       { "name": "Producten", "path": "/producten" }
     ],
-    "/hoe-het-werkt": [
+    "/how-it-works": [
       { "name": "Home", "path": "/" },
-      { "name": "Hoe Het Werkt", "path": "/hoe-het-werkt" }
+      { "name": "How It Works", "path": "/how-it-works" }
     ],
     "/cashflow-analyse": [
       { "name": "Home", "path": "/" },

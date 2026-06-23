@@ -2,13 +2,15 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  padding: 0 clamp(2rem, 5vw, 4rem);
+  box-sizing: border-box;
 }
 
 .topBlocks {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 0 clamp(2rem, 5vw, 4rem);
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
@@ -282,16 +284,15 @@
 /* ---- How it works ---- */
 .howSection {
   width: 100%;
-  padding: clamp(3rem, 4vw, 4rem) clamp(2rem, 4vw, 3rem)
-    clamp(3.5rem, 5vw, 5rem) clamp(4rem, 11vw, 8rem);
+  padding: clamp(3rem, 4vw, 4rem) 0 clamp(3.5rem, 5vw, 5rem);
   background: #ffffff;
   box-sizing: border-box;
 }
 
 .howInner {
-  max-width: 1240px;
+  max-width: 1280px;
   width: 100%;
-  margin: 0 0 0 auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: clamp(2.5rem, 4vw, 3.5rem);
@@ -467,11 +468,6 @@
 }
 
 @media (max-width: 960px) {
-  .howSection {
-    padding-left: clamp(2.5rem, 8vw, 4rem);
-    padding-right: clamp(1.5rem, 4vw, 2.5rem);
-  }
-
   .bannerInner {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -508,19 +504,24 @@
 }
 
 @media (max-width: 640px) {
-  .topBlocks {
+  .wrapper {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
 
+  .topBlocks {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
   .howSection {
-    padding-left: clamp(2rem, 6vw, 3rem);
-    padding-right: 1.25rem;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .howInner {
-    margin-left: 0;
-    margin-right: 0;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .financingBanner,

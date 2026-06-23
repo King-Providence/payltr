@@ -5,7 +5,7 @@ const nextConfig = {
       { source: "/about", destination: "/company", permanent: true },
       { source: "/over-ons", destination: "/company", permanent: true },
       { source: "/product", destination: "/producten", permanent: true },
-      { source: "/how-it-works", destination: "/hoe-het-werkt", permanent: true },
+      { source: "/hoe-het-werkt", destination: "/how-it-works", permanent: true },
       { source: "/audit", destination: "/cashflow-analyse", permanent: true },
       { source: "/early-access", destination: "/aanvragen", permanent: true },
       {

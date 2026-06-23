@@ -28,7 +28,7 @@ const NAV_LINKS = [
   { labelKey: "navbar.home", fallback: "Home", href: "/" },
   { labelKey: "navbar.partners", fallback: "Partners", href: "/partners" },
   { labelKey: "navbar.company", fallback: "Company", href: "/company" },
-  { labelKey: "navbar.howItWorks", fallback: "How it works", href: "/hoe-het-werkt" },
+  { labelKey: "navbar.howItWorks", fallback: "How it works", href: "/how-it-works" },
 ];
 
 function MenuBurgerIcon({ open }) {

@@ -6,7 +6,6 @@ import { useTranslatedContent } from "@/src/hooks/useTranslatedContent";
 
 export default function PartnersLiquidity({ content }) {
   const translated = useTranslatedContent(content);
-  const cardImage = translated.cardImage;
 
   return (
     <section
@@ -28,7 +27,7 @@ export default function PartnersLiquidity({ content }) {
             <article className={styles.card} key={benefit.title}>
               <div className={styles.cardVisual}>
                 <Image
-                  src={cardImage}
+                  src={benefit.image}
                   alt=""
                   fill
                   className={styles.cardImage}

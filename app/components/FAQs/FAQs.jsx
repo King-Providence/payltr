@@ -24,7 +24,9 @@ export default function FAQs({ details, defaultActiveIndex = null, centered = fa
                         >
                             <div className={`${styles.FAQsBoxContent}`}>
                                 <div className={`${styles.FAQsBoxHeading}`}>
-                                    <h6 style={{color:activeIndex === index ? "#4263EB" : "#000000"}}>{box.question}</h6>
+                                    <h6 className={activeIndex === index ? styles.activeQuestion : styles.question}>
+                                      {box.question}
+                                    </h6>
                                     <div className={styles.faqIcon}>
                                         {activeIndex === index ? <FaMinus /> : <FaPlus />}
                                     </div>

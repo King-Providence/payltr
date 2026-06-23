@@ -15,16 +15,11 @@ export default function HowItWorksTimeline({ content }) {
     >
       <div className={styles.inner}>
         <ol className={styles.timeline}>
-          {translated.steps.map((item, index) => (
+          <div className={styles.rail} aria-hidden="true" />
+          {translated.steps.map((item) => (
             <li className={styles.step} key={item.step}>
-              <div className={styles.stepTop}>
-                {index > 0 ? <span className={styles.connector} aria-hidden="true" /> : null}
-                <span className={styles.circle}>{item.step}</span>
-                {index < translated.steps.length - 1 ? (
-                  <span className={styles.connector} aria-hidden="true" />
-                ) : null}
-              </div>
-              <p className={styles.label}>{item.label}</p>
+              <span className={styles.circle}>{item.step}</span>
+              <p className={styles.stepLabel}>{item.label}</p>
             </li>
           ))}
         </ol>

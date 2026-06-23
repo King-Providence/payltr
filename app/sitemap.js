@@ -7,7 +7,7 @@ const staticRoutes = [
   "/over-ons",
   "/company",
   "/producten",
-  "/hoe-het-werkt",
+  "/how-it-works",
   "/cashflow-analyse",
   "/gebruik/voorraad-financiering",
   "/gebruik/marketing-financiering",

@@ -13,13 +13,13 @@ export const HowItWorksHeroSectionContent = {
 export const howItWorksPageHeroContent = {
   label: "Process",
   title: "How PayLTR Works",
-  subtitle: "Partnering for growth",
+  subtitle: "Get financed in 5 simple steps",
   description:
-    "PayLTR provides a seamless way for SMEs to access growth capital through Open Banking — without complex paperwork or lengthy bank processes.",
-  primaryCta: "Apply for Funding",
+    "From Open Banking consent to funded capital – PayLTR's end-to-end process is designed for speed, transparency and minimal friction.",
+  primaryCta: "Apply for funding",
   primaryCtaHref: "/aanvragen",
-  secondaryCta: "Contact Sales",
-  secondaryCtaHref: "/contact",
+  secondaryCta: "Partner with us",
+  secondaryCtaHref: "/partners",
   image: "/assets/partner/partnerherosection.svg",
 };
 
@@ -35,94 +35,94 @@ export const howItWorksTimelineContent = {
 
 export const howItWorksJourneyContent = {
   title: "Your Journey to Better Cashflow",
-  subtitle: "Follow these 5 steps to secure funding for your business.",
+  subtitle: "Follow these 5 simple steps to start working with PayLTR",
   steps: [
     {
       step: 1,
-      kicker: "Operational Efficiency & Data Security",
+      kicker: "Open Banking consent & data access",
       title: "SECURE DATA CONNECTION",
       description:
-        "With customer consent, Open Banking enables secure access to relevant financial information — giving PayLTR the data needed to assess your business without mountains of paperwork.",
+        "With customer consent, Open Banking enables access to relevant financial information. PayLTR uses PSD2-compliant APIs to securely connect to business bank accounts. No credentials are ever stored — access is granted via tokenised consent that can be revoked at any time.",
       bullets: [
-        "PSD2-compliant Open Banking connection",
-        "Read-only access to business accounts",
-        "Encrypted, secure data transfer",
-        "Revoke access at any time",
+        "Customer initiates consent flow",
+        "PSD2-compliant bank connection",
+        "Transaction history retrieved",
+        "Ongoing data refresh enabled",
       ],
-      image: "/assets/how-it-works/image1.png",
+      image: "/assets/how-it-works/step1.svg",
       imageFirst: true,
     },
     {
       step: 2,
-      kicker: "Cashflow Resilience & Growth Analysis",
+      kicker: "Cashflow intelligence & pressure mapping",
       title: "LIQUIDITY DIAGNOSTICS",
       description:
-        "PayLTR analyzes your business cashflow to identify liquidity pressure and funding opportunities — so financing is matched to real operational needs.",
+        "PayLTR analyses the full picture: cashflow trends over time, upcoming obligations (VAT, payroll, supplier invoices), liquidity pressure scores, and funding opportunities. This is not a credit check — it is a real-time financial health assessment.",
       bullets: [
         "Cashflow trend analysis",
-        "Upcoming obligation mapping",
-        "Liquidity pressure detection",
+        "Upcoming obligation detection",
+        "Liquidity pressure scoring",
         "Funding opportunity identification",
       ],
-      image: "/assets/how-it-works/image2.png",
+      image: "/assets/how-it-works/step2.svg",
       imageFirst: false,
     },
     {
       step: 3,
-      kicker: "Risk Mitigation & Creditworthiness",
+      kicker: "Automated risk orchestration",
       title: "ELIGIBILITY ASSESSMENT",
       description:
-        "The Risk Orchestration Engine evaluates your business profile and determines financing eligibility — based on cashflow, not personal credit scores.",
+        "The Risk Orchestration Engine determines financing eligibility based entirely on cashflow signals. Decisions are made algorithmically, without manual underwriting or credit bureau queries. Eligible businesses are matched to the most suitable funding product.",
       bullets: [
-        "Business-only assessment",
-        "No personal credit check",
-        "Fast pre-scan results",
-        "Transparent eligibility criteria",
+        "Cashflow-based eligibility model",
+        "No credit bureau queries",
+        "Algorithmic product matching",
+        "Instant eligibility decision",
       ],
-      image: "/assets/how-it-works/image3.png",
+      image: "/assets/how-it-works/step3.svg",
       imageFirst: true,
     },
     {
       step: 4,
-      kicker: "Strategic Financial Partner Matching",
+      kicker: "Automated partner selection & submission",
       title: "FUNDING PARTNER ROUTING",
       description:
-        "Qualified applications are routed through the Funding Partner Network to match your business with the right financing partner and terms.",
+        "Once eligibility is confirmed, the application is routed through the funding partner network. PayLTR selects the optimal funding partner based on the merchant's profile and product requirements. No third-party brand names are exposed during this process.",
       bullets: [
-        "Licensed funding partner network",
-        "Automated partner routing",
-        "Competitive offer matching",
-        "No manual underwriting delays",
+        "Multi-partner routing logic",
+        "Optimal partner selection",
+        "Application auto-submission",
+        "Zero third-party brand exposure",
       ],
-      image: "/assets/how-it-works/image4.png",
+      image: "/assets/how-it-works/step4.svg",
       imageFirst: false,
     },
     {
       step: 5,
-      kicker: "Funding Deployment and Growth Support",
+      kicker: "Capital deployment with structured repayment",
       title: "FUNDING ACTIVATION",
       description:
-        "Once approved, capital is deployed to your business with a 120-day payment pause before structured repayment begins — keeping your operations moving.",
+        "The merchant receives access to capital, following a 120-day payment pause — a full grace period with zero repayment obligations — repayment is structured over up to 24 months in fixed, predictable instalments.",
       bullets: [
-        "120-day payment pause",
-        "0% interest repayment over 24 months",
-        "Funds typically within 24–48 hours",
-        "Early repayment with no penalty",
+        "Capital deployed to merchant account",
+        "120-day payment pause begins",
+        "Zero repayment during pause period",
+        "Structured 24-month repayment follows",
       ],
-      image: "/assets/how-it-works/image5.png",
+      image: "/assets/how-it-works/step5.svg",
       imageFirst: true,
     },
   ],
 };
 
 export const howItWorksBusinessRealityContent = {
-  label: "Deployment Structure",
+  label: "Repayment Structure",
   title: "Designed For Business Reality",
   steps: [
-    { step: 1, label: "APPLICATION" },
-    { step: 2, label: "OFFER", note: "Decision within 24 hours" },
-    { step: 3, label: "DOCUMENTATION" },
-    { step: 4, label: "FUNDING", note: "Funds deployed in as little as 48 hours" },
+    { step: 1, label: "Day 0", note: "Funding activation" },
+    { step: 2, label: "Day 1–120", note: "120-day payment pause — zero repayment" },
+    { step: 3, label: "Day 121", note: "Repayment begins" },
+    { step: 4, label: "Month 1–24", note: "Structured monthly repayment" },
   ],
 };
 
@@ -131,34 +131,29 @@ export const howItWorksFaqContent = {
   title: "Common Questions",
   boxes: [
     {
-      question: "How does PayLTR work?",
+      question: "What data does PayLTR access?",
       content:
-        "PayLTR connects to your business bank account via Open Banking, analyzes your cashflow, and routes eligible applications to licensed funding partners. You receive up to €500,000 with a 120-day payment pause, then repay over 24 months at 0% interest.",
+        "PayLTR accesses business transaction data via Open Banking with explicit merchant consent. No personal data, no passwords, and no credential storage.",
     },
     {
-      question: "How long does the application take?",
+      question: "How long does the process take?",
       content:
-        "The online application takes 5–10 minutes. After approval and verification, funds are typically transferred within 24–48 hours.",
+        "From consent to capital, the process typically completes within the same business day. Eligibility assessment is instant. Funding activation follows partner approval.",
     },
     {
       question: "What is the 120-day payment pause?",
       content:
-        "The payment pause is a period of up to 120 days after you receive financing during which no repayments are due. A user fee, set by our financing partner Qeld, applies during this period.",
+        "The 120-day payment pause is a grace period after funding activation during which no repayment is required. Repayment begins only after this period ends.",
     },
     {
-      question: "Do I need to provide collateral?",
+      question: "Is there a minimum or maximum funding amount?",
       content:
-        "No. PayLTR financing is assessed on your business cashflow and financial health — no collateral or personal guarantee is required.",
+        "Funding through the Funding Partner Network is available up to €500,000. Minimum amounts vary by partner and are assessed during eligibility.",
     },
     {
-      question: "Why does PayLTR need access to my bank account?",
+      question: "Can a business apply multiple times?",
       content:
-        "We connect via a licensed PSD2 open banking provider for a read-only view of your cashflow. We cannot make payments or move money, and you can revoke access at any time.",
-    },
-    {
-      question: "Can I repay early?",
-      content:
-        "Yes. You can repay your full remaining balance at any time with no early repayment penalty and no additional fees.",
+        "Yes. Businesses can access the PayLTR platform as part of their ongoing liquidity management, subject to eligibility at each application.",
     },
   ],
 };

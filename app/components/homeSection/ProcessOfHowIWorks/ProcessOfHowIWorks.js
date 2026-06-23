@@ -200,7 +200,7 @@ export default function ProcessOfHowIWorks() {
               <h2 className={styles.howTitle}>How It Works</h2>
               <p className={styles.howSubtitle}>Get financed in 5 simple steps</p>
             </div>
-            <Link href="/hoe-het-werkt" className={styles.howBtn}>
+            <Link href="/how-it-works" className={styles.howBtn}>
               See the full process
             </Link>
           </div>

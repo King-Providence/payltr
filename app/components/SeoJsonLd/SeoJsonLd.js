@@ -4,7 +4,7 @@ import Script from "next/script";
 import { usePathname } from "next/navigation";
 import schemaData from "@/lib/seoSchemas.json";
 
-const FAQ_ROUTES = new Set(["/", "/hoe-het-werkt"]);
+const FAQ_ROUTES = new Set(["/", "/how-it-works"]);
 
 function getBaseUrl() {
   return process.env.NEXT_PUBLIC_SITE_URL || "https://payltr.eu";

@@ -26,11 +26,13 @@ export default function HowItWorksReadyToGetStarted({ content, isAuditPage }) {
     return (
       <section className={styles.talkSection} data-aos="fade-up">
         <div className={styles.talkInner}>
-          <h2 className={styles.talkTitle}>{translatedContent.title}</h2>
-          <p className={styles.talkSubtitle}>{translatedContent.description}</p>
-          <Link href={ctaHref} className={styles.talkCta}>
-            {ctaText}
-          </Link>
+          <div className={styles.talkContent}>
+            <h2 className={styles.talkTitle}>{translatedContent.title}</h2>
+            <p className={styles.talkSubtitle}>{translatedContent.description}</p>
+            <Link href={ctaHref} className={styles.talkCta}>
+              {ctaText}
+            </Link>
+          </div>
         </div>
       </section>
     );
@@ -38,10 +40,11 @@ export default function HowItWorksReadyToGetStarted({ content, isAuditPage }) {
 
   return (
     <section className={styles.section} data-aos="fade-up">
-      <h2 className={styles.title}>{translatedContent.title}</h2>
-      <p className={styles.subtitle}>{translatedContent.description}</p>
+      <div className={styles.sectionInner}>
+        <h2 className={styles.title}>{translatedContent.title}</h2>
+        <p className={styles.subtitle}>{translatedContent.description}</p>
 
-      <div className={styles.buttonWrapper} data-aos="fade-up">
+        <div className={styles.buttonWrapper} data-aos="fade-up">
         {isAuditPage ? (
           <Link href="/aanvragen" className={styles.cta} type="button">
             {applyNowLabel}
@@ -77,6 +80,7 @@ export default function HowItWorksReadyToGetStarted({ content, isAuditPage }) {
           ))}
         </div>
       )}
+      </div>
     </section>
   );
 }

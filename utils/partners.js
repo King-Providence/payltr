@@ -9,27 +9,31 @@ export const partnersHeroContent = {
 export const partnersLiquidityContent = {
   title: "If You're Not Offering Liquidity Solutions...",
   subtitle: "You're Leaving Value On The Table",
-  cardImage: "/assets/partner/liquiditysolution.svg",
   benefits: [
     {
       title: "INCREASE REVENUE",
       description: "Generate additional revenue through partner monetization.",
+      image: "/assets/partner/revenue.svg",
     },
     {
       title: "IMPROVE RETENTION",
       description: "Reduce customer churn.",
+      image: "/assets/partner/retension.svg",
     },
     {
       title: "STRENGTHEN BRAND LOYALTY",
       description: "Become a growth partner instead of just a software provider.",
+      image: "/assets/partner/loyalty.svg",
     },
     {
       title: "DRIVE PLATFORM ACTIVITY",
       description: "Support inventory purchases, supplier payments and operational growth.",
+      image: "/assets/partner/drive.svg",
     },
     {
       title: "SUPPORT BUSINESS CONTINUITY",
       description: "Help customers survive temporary liquidity shortages.",
+      image: "/assets/partner/support.svg",
     },
   ],
 };

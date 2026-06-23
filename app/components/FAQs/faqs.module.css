@@ -21,13 +21,17 @@
 .centered {
     align-items: center;
     text-align: center;
-    padding-top: clamp(2rem, 4vw, 3rem);
+    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 5vw, 4rem);
+    margin-bottom: 0;
+    background: #ffffff;
 }
 
 .centered h2 {
     padding: 0;
     width: 100%;
     max-width: 900px;
+    font-size: clamp(2rem, 2.5vw + 1rem, 2.75rem);
+    line-height: 1.15;
 }
 
 .centered h2 span {
@@ -35,7 +39,7 @@
     font-size: 0.85rem;
     line-height: 1.4;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #2445cd;
     margin-bottom: 0.5rem;
@@ -49,6 +53,35 @@
 .centeredBoxes {
     max-width: 900px;
     padding: 0;
+    gap: 0.75rem;
+}
+
+.centered .FAQsBox {
+    background-color: #f1f4fc;
+    border: 1px solid transparent;
+    padding: 1.35rem 1.5rem;
+}
+
+.centered .FAQsBox.active {
+    background-color: #eef2fb;
+    border-color: #d8e2f8;
+}
+
+.question {
+    color: #0f0f0f;
+}
+
+.activeQuestion {
+    color: #2445cd;
+}
+
+.centered .faqIcon {
+    color: #2445cd;
+}
+
+.centered .FAQsBoxAnswer p {
+    color: #1f2937;
+    line-height: 1.65;
 }
 .FAQsBoxesContainer{
     display: flex;
@@ -101,7 +134,6 @@
     transform: rotate(180deg);
 }
 .FAQsBox h6{
-    color: #000000;
     font-weight: 700;
     font-size: 1.1rem;
     font-family: 'Manrope', sans-serif !important;
