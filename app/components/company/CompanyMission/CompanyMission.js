@@ -12,7 +12,7 @@ export default function CompanyMission({ content }) {
         <div className={styles.left}>
           <p className={styles.label}>{translated.label}</p>
           <h2 id="company-mission-title" className={styles.title}>
-            {translated.title}{" "}
+            {translated.title}
             <span className={styles.titleHighlight}>{translated.titleHighlight}</span>
           </h2>
           {translated.paragraphs.map((paragraph) => (
@@ -24,13 +24,29 @@ export default function CompanyMission({ content }) {
 
         <div className={styles.journeyCard}>
           <h3 className={styles.journeyTitle}>{translated.journeyTitle}</h3>
-          <ul className={styles.journeyList}>
-            {translated.journeySteps.map((step) => (
-              <li className={styles.journeyItem} key={step}>
-                <span className={styles.journeyDot} aria-hidden="true" />
-                <span>{step}</span>
-              </li>
-            ))}
+          <ul className={styles.journeyTimeline}>
+            {translated.journeySteps.map((step) => {
+              const label = typeof step === "string" ? step : step.label;
+              const highlight = typeof step === "string" ? false : step.highlight;
+
+              return (
+                <li
+                  className={`${styles.journeyStep} ${highlight ? styles.journeyStepHighlight : styles.journeyStepPlain}`}
+                  key={label}
+                >
+                  <div className={styles.dotCol}>
+                    <span className={styles.journeyDot} aria-hidden="true" />
+                  </div>
+                  <div className={styles.labelCol}>
+                    {highlight ? (
+                      <span className={styles.journeyBox}>{label}</span>
+                    ) : (
+                      <span className={styles.journeyPlain}>{label}</span>
+                    )}
+                  </div>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

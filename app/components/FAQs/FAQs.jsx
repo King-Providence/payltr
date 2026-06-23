@@ -3,9 +3,8 @@ import styles from "./faqs.module.css";
 import { FaPlus, FaMinus } from "react-icons/fa6";
 import { useState } from "react";
 
-export default function FAQs({details}){
-    
-    const [activeIndex, setActiveIndex] = useState(null);
+export default function FAQs({ details, defaultActiveIndex = null, centered = false }) {
+    const [activeIndex, setActiveIndex] = useState(defaultActiveIndex);
 
     const handleClick = (index) => {
       setActiveIndex(activeIndex === index ? null : index);
@@ -13,7 +12,7 @@ export default function FAQs({details}){
 
     return(
         <>
-            <div className={`${styles.FAQsContainer}`} data-aos="fade-up">
+            <div className={`${styles.FAQsContainer} ${centered ? styles.centered : ""}`} data-aos="fade-up">
                 <h2 data-aos="fade-up"><span>{details.span}</span> {details.title}</h2>
                 <div className={`${styles.FAQsBoxesContainer}`}  data-aos="fade-up">
                     <div className={`${styles.FAQsBoxes}`}>

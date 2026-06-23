@@ -10,16 +10,14 @@
 
 .header {
   text-align: center;
-  margin-bottom: clamp(2rem, 4vw, 3rem);
+  margin-bottom: clamp(2.25rem, 4vw, 3rem);
 }
 
 .label {
   margin: 0 0 0.5rem;
   font-family: "Manrope", sans-serif !important;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  font-size: 0.95rem;
+  font-weight: 600;
   color: #2445cd;
 }
 
@@ -35,41 +33,45 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
 .card {
   background: #ffffff;
-  border-radius: 12px;
-  padding: 1.5rem 1.35rem;
-  box-shadow: 0 2px 18px rgba(15, 23, 42, 0.06);
-  border: 1px solid rgba(15, 23, 42, 0.04);
+  border-radius: 10px;
+  padding: 1.5rem 1.4rem 1.6rem;
+  border: 1px solid #e5eaf3;
+  text-align: left;
+}
+
+.iconWrap {
+  margin-bottom: 1rem;
+  line-height: 0;
 }
 
 .icon {
+  width: 32px;
+  height: 32px;
   display: block;
-  width: 28px;
-  height: 28px;
-  margin-bottom: 1rem;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #2445cd 0%, #4f6fe8 100%);
+  object-fit: contain;
 }
 
 .cardTitle {
-  margin: 0 0 0.6rem;
+  margin: 0 0 0.65rem;
   font-family: "Manrope", sans-serif !important;
   font-size: 1rem;
   font-weight: 700;
   color: #0f172a;
+  line-height: 1.3;
 }
 
 .cardText {
   margin: 0;
   font-family: "Manrope", sans-serif !important;
-  font-size: 0.92rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.65;
   font-weight: 500;
-  color: #64748b;
+  color: #374151;
 }
 
 @media (max-width: 900px) {

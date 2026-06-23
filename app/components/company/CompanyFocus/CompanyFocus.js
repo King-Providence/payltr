@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./companyFocus.module.css";
 import { useTranslatedContent } from "@/src/hooks/useTranslatedContent";
 
@@ -19,8 +18,11 @@ export default function CompanyFocus({ content }) {
         </header>
 
         <div className={styles.grid}>
-          {translated.items.map((item) => (
-            <article className={styles.card} key={item.title}>
+          {translated.items.map((item, index) => (
+            <article
+              className={`${styles.card} ${index === 0 ? styles.cardFeatured : ""}`}
+              key={item.title}
+            >
               <div className={styles.imageWrap}>
                 <Image
                   src={item.image}
@@ -32,9 +34,7 @@ export default function CompanyFocus({ content }) {
               </div>
               <div className={styles.cardBody}>
                 <h3 className={styles.cardTitle}>{item.title}</h3>
-                <Link href={item.href} className={styles.link}>
-                  {item.linkText}
-                </Link>
+                <p className={styles.cardSubtitle}>{item.subtitle}</p>
               </div>
             </article>
           ))}

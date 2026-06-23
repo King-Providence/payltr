@@ -1,0 +1,165 @@
+.section {
+  position: relative;
+  width: 100%;
+  margin: clamp(2rem, 4vw, 3rem) 0;
+  padding: clamp(3rem, 5vw, 4.5rem) clamp(1.5rem, 5vw, 4rem);
+  background: #2445cd;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.pattern {
+  position: absolute;
+  inset: 0;
+  background-image: url("/assets/Circle.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.label {
+  margin: 0 0 0.75rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.title {
+  margin: 0 0 clamp(2.5rem, 4vw, 3.5rem);
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(1.75rem, 2.5vw + 1rem, 2.75rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 0;
+  color: #ffffff;
+}
+
+.stepTop {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+.circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #2445cd;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 1.05rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.connector {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.55);
+  min-width: 8px;
+}
+
+.stepLabel {
+  margin: 1rem 0 0.25rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.8rem;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+.stepTitle {
+  margin: 0;
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(0.8rem, 1vw, 0.95rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.stepNote {
+  margin: 0.35rem 0 0;
+  padding: 0 0.35rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(0.7rem, 0.8vw, 0.82rem);
+  font-weight: 500;
+  line-height: 1.35;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1.75rem;
+  }
+
+  .step {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    text-align: left;
+    gap: 0 1rem;
+  }
+
+  .stepTop {
+    width: auto;
+    flex-shrink: 0;
+  }
+
+  .connector {
+    display: none;
+  }
+
+  .stepLabel,
+  .stepTitle,
+  .stepNote {
+    flex: 1;
+    min-width: calc(100% - 60px);
+    margin-left: 60px;
+    margin-top: -2.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .stepTitle {
+    margin-top: -1.75rem;
+  }
+
+  .stepNote {
+    margin-top: 0;
+  }
+}

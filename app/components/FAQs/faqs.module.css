@@ -17,6 +17,34 @@
     color: #000000;
     padding: 0rem 3rem;
 }
+
+.centered {
+    align-items: center;
+    text-align: center;
+    padding-top: clamp(2rem, 4vw, 3rem);
+}
+
+.centered h2 {
+    padding: 0;
+    width: 100%;
+    max-width: 900px;
+}
+
+.centered h2 span {
+    display: block;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #2445cd;
+    margin-bottom: 0.5rem;
+}
+
+.centered .FAQsBoxes {
+    max-width: 900px;
+    padding: 0;
+}
 .FAQsBoxesContainer{
     display: flex;
     width: 100%;

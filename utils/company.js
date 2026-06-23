@@ -26,52 +26,54 @@ export const companyMissionContent = {
   title: "Transforming Liquidity Pressure",
   titleHighlight: "Into Financing Opportunities",
   paragraphs: [
-    "SMEs don't fail because they lack revenue — they fail because cash arrives too late. PayLTR exists to close that gap by embedding financing directly inside the tools businesses already use.",
-    "We partner with platforms, neobanks, and software providers to offer liquidity at the point of need — without building lending infrastructure from scratch.",
+    "SMEs constantly face moments where cash flow timing doesn't align with opportunity — VAT bills due before client payments arrive, growth opportunities that require upfront capital, or payroll gaps during seasonal slowdowns.",
+    "PayLTR solves this with intelligent, Open Banking-powered liquidity infrastructure that detects pressure early and activates financing at the right moment.",
   ],
   journeyTitle: "The Financing Journey",
   journeySteps: [
-    "Submit application via partner platform",
-    "Open Banking cashflow review",
-    "Funding decision & activation",
-    "120-day payment pause begins",
-    "24-month structured repayment",
+    { label: "Cashflow Insight", highlight: true },
+    { label: "Liquidity Detection", highlight: false },
+    { label: "Financing Trigger", highlight: true },
+    { label: "Funding Partner", highlight: false },
+    { label: "120-Day Payment Pause", highlight: true },
+    { label: "24-Month Structured Repayment", highlight: false },
   ],
 };
 
 export const companyValuesContent = {
   label: "What We Stand For",
   title: "Our Values",
+  icon: "/assets/values.svg",
   values: [
     {
       title: "Open By Design",
       description:
-        "Built on Open Banking and API-first architecture so partners integrate quickly and SMEs stay in control of their data.",
+        "We built PayLTR on Open Banking from day one — not as an afterthought. Transparent data access and explicit consent are fundamental to how we operate.",
+    },
+    {
+      title: "Infrastructure, Not Intermediary",
+      description:
+        "We are not a lender. We are not a broker. We are the orchestration layer that connects real financial events to real capital solutions.",
     },
     {
       title: "Speed At Scale",
       description:
-        "From application to funding in minutes — not weeks. Automated decisioning keeps the experience fast at any volume.",
+        "Liquidity pressure doesn't wait. Our systems are designed for sub-second eligibility decisions and same-day funding activation at enterprise scale.",
     },
     {
-      title: "Partner First",
+      title: "SME-First Thinking",
       description:
-        "We succeed when our partners succeed. Revenue share, co-branded journeys, and white-label options built in.",
+        "Every product decision is filtered through a single question: does this make life easier for the SME? If not, we don't build it.",
     },
     {
-      title: "Transparent By Default",
+      title: "Partner Alignment",
       description:
-        "Clear schedules, fixed repayments, and no hidden interest. SMEs always know what they owe and when.",
+        "Our revenue model is built around partner success. When your customers access capital through PayLTR, everyone benefits.",
     },
     {
-      title: "Built For SMEs",
+      title: "Continuity Over Growth",
       description:
-        "Designed for real operational needs — inventory, VAT, marketing, and project costs — not generic consumer loans.",
-    },
-    {
-      title: "Compliance Ready",
-      description:
-        "Registered in the Netherlands with PSD2-compliant flows, robust KYC, and partner-grade risk orchestration.",
+        "Our financing products are designed first and foremost to protect business continuity — helping SMEs survive and thrive through cashflow challenges.",
     },
   ],
 };
@@ -81,28 +83,24 @@ export const companyFocusContent = {
   title: "Built Around Real Business Needs",
   items: [
     {
-      title: "Platforms & Neobanks",
-      linkText: "Partner with PayLTR",
-      href: "/partners",
-      image: "/assets/profile.png",
+      title: "OPERATIONAL LIQUIDITY",
+      subtitle: "Core Mission",
+      image: "/assets/company/liquidity.svg",
     },
     {
-      title: "Accounting & SaaS",
-      linkText: "Explore integrations",
-      href: "/partners",
-      image: "/assets/profile.png",
+      title: "OPEN BANKING",
+      subtitle: "Technology Foundation",
+      image: "/assets/company/banking.svg",
     },
     {
-      title: "Payment Providers",
-      linkText: "See how it works",
-      href: "/hoe-het-werkt",
-      image: "/assets/profile.png",
+      title: "PARTNER NETWORK",
+      subtitle: "Funding Infrastructure",
+      image: "/assets/company/network.svg",
     },
     {
-      title: "SME Operators",
-      linkText: "Apply for funding",
-      href: "/aanvragen",
-      image: "/assets/profile.png",
+      title: "SME FOCUS",
+      subtitle: "Customer Commitment",
+      image: "/assets/company/sme.svg",
     },
   ],
 };

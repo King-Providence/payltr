@@ -1,7 +1,6 @@
 .section {
   background: #ffffff;
   padding: 3rem clamp(2rem, 5vw, 4rem);
-  border-bottom: 1px solid #eef2f8;
 }
 
 .inner {
