@@ -41,7 +41,12 @@
     margin-bottom: 0.5rem;
 }
 
-.centered .FAQsBoxes {
+.centeredBoxesContainer {
+    width: 100%;
+    max-width: 900px;
+}
+
+.centeredBoxes {
     max-width: 900px;
     padding: 0;
 }

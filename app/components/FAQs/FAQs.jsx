@@ -14,8 +14,8 @@ export default function FAQs({ details, defaultActiveIndex = null, centered = fa
         <>
             <div className={`${styles.FAQsContainer} ${centered ? styles.centered : ""}`} data-aos="fade-up">
                 <h2 data-aos="fade-up"><span>{details.span}</span> {details.title}</h2>
-                <div className={`${styles.FAQsBoxesContainer}`}  data-aos="fade-up">
-                    <div className={`${styles.FAQsBoxes}`}>
+                <div className={`${styles.FAQsBoxesContainer} ${centered ? styles.centeredBoxesContainer : ""}`} data-aos="fade-up">
+                    <div className={`${styles.FAQsBoxes} ${centered ? styles.centeredBoxes : ""}`}>
                         {details.boxes.map((box, index) => (
                         <div 
                             className={`${styles.FAQsBox} ${activeIndex === index ? styles.active : ''}`} 
