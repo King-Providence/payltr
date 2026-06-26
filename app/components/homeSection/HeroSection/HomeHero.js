@@ -7,12 +7,17 @@ import Image from "next/image";
 import "@/lib/i18n";
 
 const HERO_DEFAULTS = {
-  titleLine1: "Grow Now.",
-  titleLine2: "Repay Later.",
+  title: "Embedded Business Finance Infrastructure for Platforms & Payment Provider",
   subtitle:
-    "Operational liquidity infrastructure for SMEs and the platforms that serve them.",
+    "Enable your merchants to access flexible working capital—without becoming a lender.",
   description:
-    "Using Open Banking, cashflow intelligence and automated funding partner integrations, PayLTR transforms liquidity pressure into financing opportunities.",
+    "Increase merchant retention. Unlock new revenue. Power business growth.",
+  bullets: [
+    "Up to 120 days before first repayment",
+    "Repayment terms up to 24 months",
+    "Multiple funding partners",
+    "One API integration",
+  ],
   ctaFunding: "Get Funding",
   ctaPartner: "Become a Partner",
 };
@@ -36,12 +41,7 @@ export default function HomeHero() {
         data-aos="fade-right"
       >
         <h1 className={styles.title}>
-          <span className={styles.titleLine}>
-            {t("homeHero.titleLine1", { defaultValue: HERO_DEFAULTS.titleLine1 })}
-          </span>
-          <span className={styles.titleLine}>
-            {t("homeHero.titleLine2", { defaultValue: HERO_DEFAULTS.titleLine2 })}
-          </span>
+          {t("homeHero.title", { defaultValue: HERO_DEFAULTS.title })}
         </h1>
 
         <div className={styles.contentSection}>
@@ -51,6 +51,13 @@ export default function HomeHero() {
           <p className={styles.description}>
             {t("homeHero.description", { defaultValue: HERO_DEFAULTS.description })}
           </p>
+          <ul className={styles.bullets}>
+            {HERO_DEFAULTS.bullets.map((bullet, index) => (
+              <li key={index} className={styles.bulletItem}>
+                {t(`homeHero.bullets.${index}`, { defaultValue: bullet })}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className={styles.actions}>

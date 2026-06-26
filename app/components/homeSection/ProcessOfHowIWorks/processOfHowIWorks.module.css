@@ -75,13 +75,13 @@
 }
 
 .bannerSubheading {
-  margin: 1rem 0 0;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  margin: 1.5rem 0 0;
+  font-size: clamp(1rem, 0.6vw + 0.9rem, 1.25rem);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.35;
   font-family: "Manrope", sans-serif !important;
-  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .bannerIntro {
@@ -94,29 +94,73 @@
 }
 
 .bannerList {
-  margin: 0.85rem 0 0;
+  margin: 1.85rem 0 0;
   padding: 0;
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.55rem;
 }
 
 .bannerList li {
-  font-size: 0.92rem;
-  line-height: 1.55;
+  position: relative;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
   font-weight: 400;
   font-family: "Manrope", sans-serif !important;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .bannerList li::before {
-  content: "* ";
+  content: "•";
+  position: absolute;
+  left: 0.2rem;
+  top: 0;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .bannerDivider {
   width: 1px;
   background: rgba(255, 255, 255, 0.4);
   align-self: stretch;
+}
+
+.infraHeading {
+  margin: 0 0 0.5rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(1.2rem, 1vw + 0.9rem, 1.6rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+}
+
+.infraList {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.infraList li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.infraDot {
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #ffffff;
 }
 
 .benefitsHeading {

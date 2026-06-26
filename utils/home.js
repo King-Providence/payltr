@@ -11,14 +11,12 @@ export const ecosystemGridContent = {
   kicker: "Ecosystem Grid",
   title: "Built For Modern SME Ecosystems",
   cards: [
-    { title: "SMEs", image: "/assets/home/sme.svg" },
-    { title: "Banks", image: "/assets/home/banks.svg" },
-    { title: "Neobanks", image: "/assets/home/neobanks.svg" },
-    { title: "Payment Providers", image: "/assets/home/paymentproviders.svg" },
-    { title: "Accounting Platforms", image: "/assets/home/accounting.svg" },
+    { title: "Payment Providers", image: "/assets/home/sme.svg" },
     { title: "SaaS Platforms", image: "/assets/home/saas.svg" },
-    { title: "B2B Marketplaces", image: "/assets/home/B2B.svg" },
-    { title: "Payroll Platforms", image: "/assets/home/payroll.svg" },
+    { title: "ERP Providers", image: "/assets/home/erp.svg" },
+    { title: "Accounting Software", image: "/assets/home/accounting.svg" },
+    { title: "Marketplaces", image: "/assets/home/paymentproviders.svg" },
+    { title: "B2B Platforms", image: "/assets/home/B2B.svg" },
   ],
 };
 
@@ -189,11 +187,11 @@ export const homefaq = {
 
 export const getStartedContent={
     variant: "talkToUs",
-    title: "Talk to us",
+    title: "Ready to offer business finance?",
     description:
-      "Find out how PayLTR can support your small business customers",
-    ctaText: "Speak To Partnerships",
-    ctaHref: "/contact",
+      "Become the platform your merchants rely on for growth.",
+    ctaText: "Become a Partner",
+    ctaHref: "/partners",
 }
 
 export const homeTestimonialContent = {

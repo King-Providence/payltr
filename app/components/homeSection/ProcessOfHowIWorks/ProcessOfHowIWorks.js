@@ -6,26 +6,21 @@ import styles from "./processOfHowIWorks.module.css";
 
 const STEP_ICON = "/assets/home/howitwork.svg";
 
-const FINANCING_BULLETS = [
-  "support growth",
-  "bridge VAT obligations",
-  "cover supplier payments",
-  "maintain business continuity",
+const MERCHANT_BENEFITS = [
+  "Up to 120 days before first repayment",
+  "Repayment terms up to 24 months",
+  "Fast digital application",
+  "Working capital for inventory, growth and expansion",
 ];
 
-const KEY_BENEFITS = [
-  {
-    title: "Instant Cashflow Bridge",
-    body: "PayLTR identifies liquidity pressure and orchestrates the financing journey.",
-  },
-  {
-    title: "120-Day Payment Pause",
-    body: "Businesses receive a full 120-day grace period before repayment begins.",
-  },
-  {
-    title: "Predictable Repayment",
-    body: "Following the payment pause, repayment is structured over up to 24 months.",
-  },
+const INFRASTRUCTURE = [
+  "One integration.",
+  "Multiple funding partners.",
+  "Embedded finance orchestration.",
+  "Compliance support.",
+  "KYC/KYB.",
+  "API-first.",
+  "Scalable across Europe.",
 ];
 
 const PARTNER_BENEFITS = [
@@ -40,41 +35,32 @@ const PARTNER_BENEFITS = [
 const STEPS = [
   {
     step: 1,
-    title: "Secure Data Connection",
-    description:
-      "With customer consent, Open Banking enables access to relevant financial information.",
+    title: "Integrate PayLTR",
+    description: "Connect once using our API.",
   },
   {
     step: 2,
-    title: "Liquidity Diagnostics",
-    description: "PayLTR analyzes:",
-    bullets: [
-      "cashflow trends",
-      "upcoming obligations",
-      "liquidity pressure",
-      "funding opportunities",
-    ],
+    title: "Offer Financing",
+    description:
+      "Embed financing inside your merchant portal, onboarding or dashboard.",
   },
   {
     step: 3,
-    title: "Eligibility Assessment",
+    title: "Smart Eligibility",
     description:
-      "The Risk Orchestration Engine determines financing eligibility.",
+      "PayLTR evaluates merchants and routes them to the most suitable funding partner.",
   },
   {
     step: 4,
-    title: "Funding Partner Routing",
-    description: "Applications are routed through the Funding Partner Network.",
+    title: "Funding",
+    description:
+      "Approved merchants receive working capital with flexible repayment options.",
   },
   {
     step: 5,
-    title: "Funding Activation",
-    description: "The merchant receives access to capital.",
-    flow: [
-      "120-Day Payment Pause",
-      "Repayment begins after the grace period.",
-      "Repayment term up to 24 months",
-    ],
+    title: "Monitor Everything",
+    description:
+      "Track applications, approvals and performance through one partner dashboard.",
   },
 ];
 
@@ -130,16 +116,12 @@ export default function ProcessOfHowIWorks() {
           <div className={styles.bannerPattern} aria-hidden />
           <div className={styles.bannerInner}>
             <div className={styles.bannerCol}>
-              <h2 className={styles.bannerTitle}>
-                Offer Flexible Financing Up To €500,000
-              </h2>
-              <p className={styles.bannerSubheading}>WITH A 120-DAY PAYMENT PAUSE</p>
-              <p className={styles.bannerIntro}>
-                Through our Funding Partner Network, SMEs can access operational
-                financing designed to:
+              <h2 className={styles.bannerTitle}>Why Merchants Love It</h2>
+              <p className={styles.bannerSubheading}>
+                PARTNER BENEFIT FIRST, MERCHANT BENEFIT LATER
               </p>
               <ul className={styles.bannerList}>
-                {FINANCING_BULLETS.map((item) => (
+                {MERCHANT_BENEFITS.map((item) => (
                   <li key={item}>{item}</li>
                 ))}
               </ul>
@@ -148,15 +130,15 @@ export default function ProcessOfHowIWorks() {
             <div className={styles.bannerDivider} aria-hidden />
 
             <div className={styles.bannerCol}>
-              <h3 className={styles.benefitsHeading}>KEY BENEFITS</h3>
-              <div className={styles.benefitsList}>
-                {KEY_BENEFITS.map((benefit) => (
-                  <div key={benefit.title} className={styles.benefitItem}>
-                    <p className={styles.benefitTitle}>{benefit.title}</p>
-                    <p className={styles.benefitBody}>{benefit.body}</p>
-                  </div>
+              <h3 className={styles.infraHeading}>INFRASTRUCTURE</h3>
+              <ul className={styles.infraList}>
+                {INFRASTRUCTURE.map((item) => (
+                  <li key={item}>
+                    <span className={styles.infraDot} aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </div>
           </div>
         </section>

@@ -27,10 +27,8 @@
 
 .title {
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  font-size: 4rem;
-  line-height: 1.05;
+  font-size: clamp(2.25rem, 2.5vw + 1.5rem, 3.5rem);
+  line-height: 1.08;
   letter-spacing: -0.03em;
   font-weight: 700;
   color: white;
@@ -40,6 +38,33 @@
 
 .titleLine {
   display: block;
+}
+
+.bullets {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.bulletItem {
+  position: relative;
+  padding-left: 1.25rem;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  font-family: "Manrope", sans-serif !important;
+}
+
+.bulletItem::before {
+  content: "•";
+  position: absolute;
+  left: 0.25rem;
+  top: 0;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .contentWrapper {

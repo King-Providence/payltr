@@ -44,7 +44,7 @@ export default function WhyFounderChoose() {
           <div className={styles.leftSticky}>
             <p className={styles.kicker}>For Businesses</p>
             <h2 id="liquidity-needs-heading" className={styles.title}>
-              When Does Your Business Need Liquidity?
+              Benefits for Partners
             </h2>
             <Link className={styles.ctaBtn} href="/aanvragen">
               Apply For Funding
