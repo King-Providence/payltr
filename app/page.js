@@ -11,7 +11,7 @@ import ProcessOfHowIWorks from "./components/homeSection/ProcessOfHowIWorks/Proc
 import HomeTestimonial from "./components/homeSection/HomeTestimonial/HomeTestimonial";
 import HowItWorksFundingEcoSection from "./components/howItWorks/FundingEcoSection/HowItWorksFundingEcoSection";
 import HowItWorksReadyToGetStarted from "./components/howItWorks/CtaSection/HowItWorksReadyToGetStarted";
-import { complianceContent, ecosystemGridContent, getStartedContent, homefaq, homeTestimonialContent, howItWorksFundingEcoSectionContent, howWeDecideContent } from "@/utils/home";
+import { complianceContent, ecosystemGridContent, getStartedContent, homefaq, homeTestimonialContent, howItWorksFundingEcoSectionContent, howWeDecideContent, openBankingContent, partnerBenefitsContent, problemContent } from "@/utils/home";
 import { useTranslation } from "react-i18next";
 import "@/lib/i18n";
 import { translateUtilContent } from "@/lib/translateUtilContent";
@@ -31,12 +31,14 @@ export default function Home() {
         <HomeHero />
         
         {/* <TrustedByBusinesses content={translateUtilContent(trustedByBusinessesContent, t)} /> */}
-        <BenifitsBusinesses content={translateUtilContent(ecosystemGridContent, t)} />
+        <BenifitsBusinesses content={translateUtilContent(problemContent, t)} />
         {/* <HomePartnerLogos /> */}
         {/* <HowItWorksFundingEcoSection content={translateUtilContent(howItWorksFundingEcoSectionContent, t)} /> */}
         {/* <WhyPayltrDifferent /> */}
         <WhyFounderChoose />
+<HowWeDecide content={translateUtilContent(partnerBenefitsContent, t)} />
         <ProcessOfHowIWorks />
+<HowWeDecide content={translateUtilContent(openBankingContent, t)} />
         {/* <HomeTestimonial content={homeTestimonialContent} /> */}
         {/* <WhoIsPayLTRF /> */}
         {/* <HowWeDecide content={translateUtilContent(howWeDecideContent, t)} /> */}

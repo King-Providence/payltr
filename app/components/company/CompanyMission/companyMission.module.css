@@ -1,168 +1,346 @@
-.section {
-  padding: clamp(3.5rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
-  background: #ffffff;
+.section{
+    position:relative;
+    overflow:hidden;
+    padding:120px 7%;
+    background:
+    radial-gradient(circle at 10% 20%,rgba(67,97,238,.08),transparent 38%),
+    radial-gradient(circle at 90% 80%,rgba(59,130,246,.08),transparent 38%),
+    linear-gradient(to bottom,#ffffff,#f7faff);
 }
 
-.inner {
-  max-width: 1180px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(2.5rem, 5vw, 4rem);
-  align-items: center;
+.blurOne{
+    position:absolute;
+    width:420px;
+    height:420px;
+    border-radius:50%;
+    background:#3b82f630;
+    filter:blur(130px);
+    top:-140px;
+    left:-120px;
+    animation:floatBlur 16s ease-in-out infinite;
 }
 
-.label {
-  margin: 0 0 0.75rem;
-  font-family: "Manrope", sans-serif !important;
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  color: #2445cd;
+.blurTwo{
+    position:absolute;
+    width:360px;
+    height:360px;
+    border-radius:50%;
+    background:#4f46e530;
+    filter:blur(120px);
+    right:-120px;
+    bottom:-120px;
+    animation:floatBlur 18s ease-in-out infinite reverse;
 }
 
-.title {
-  margin: 0 0 1.5rem;
-  font-family: "Manrope", sans-serif !important;
-  font-size: clamp(1.9rem, 2.2vw + 1rem, 2.65rem);
-  line-height: 1.12;
-  letter-spacing: -0.02em;
-  font-weight: 700;
-  color: #0f172a;
+.container{
+    position:relative;
+    z-index:2;
+    max-width:1320px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1.05fr .95fr;
+    gap:90px;
+    align-items:center;
 }
 
-.titleHighlight {
-  display: block;
-  margin-top: 0.15rem;
-  color: #2445cd;
+.left{
+    max-width:640px;
 }
 
-.text {
-  margin: 0 0 1.1rem;
-  font-family: "Manrope", sans-serif !important;
-  font-size: 1rem;
-  line-height: 1.75;
-  font-weight: 500;
-  color: #4b5563;
+.label{
+    display:inline-flex;
+    align-items:center;
+    padding:10px 18px;
+    border-radius:999px;
+    background:rgba(59,130,246,.08);
+    border:1px solid rgba(59,130,246,.18);
+    color:#2450e6;
+    font-size:.82rem;
+    font-weight:700;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    margin-bottom:22px;
 }
 
-.text:last-of-type {
-  margin-bottom: 0;
+.title{
+    margin:0;
+    font-size:clamp(2.7rem,5vw,4.2rem);
+    font-weight:800;
+    line-height:1.05;
+    color:#08142d;
+    letter-spacing:-.05em;
 }
 
-.journeyCard {
-  background: #f8faff;
-  border: 1px solid #e3ebf7;
-  border-radius: 14px;
-  padding: 1.65rem 1.5rem 1.75rem;
-  width: 100%;
-  max-width: 480px;
-  justify-self: end;
+.titleHighlight{
+    display:block;
+    margin-top:10px;
+    background:linear-gradient(90deg,#2954f2,#46b5ff);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    animation:shineText 8s linear infinite;
 }
 
-.journeyTitle {
-  margin: 0 0 1.25rem;
-  font-family: "Manrope", sans-serif !important;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #254bdb;
-  letter-spacing: -0.01em;
+.paragraph{
+    margin-top:28px;
+    color:#5d667b;
+    font-size:1.05rem;
+    line-height:2;
+    max-width:620px;
 }
 
-.journeyTimeline {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
+.timelineCard{
+    position:relative;
+    padding:42px;
+    border-radius:34px;
+    background:rgba(255,255,255,.68);
+    backdrop-filter:blur(24px);
+    border:1px solid rgba(255,255,255,.65);
+    box-shadow:
+    0 35px 70px rgba(16,24,40,.08),
+    inset 0 1px rgba(255,255,255,.9);
 }
 
-.journeyTimeline::before {
-  content: "";
-  position: absolute;
-  left: 9px;
-  top: 14px;
-  bottom: 14px;
-  width: 2px;
-  background: #d1d9e6;
-  border-radius: 1px;
+.timelineTitle{
+    margin:0 0 36px;
+    font-size:1.25rem;
+    font-weight:700;
+    color:#2445cd;
 }
 
-.journeyStep {
-  position: relative;
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  column-gap: 0.85rem;
-  align-items: center;
-  min-height: 44px;
+.timeline{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:28px;
 }
 
-.dotCol {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  position: relative;
-  z-index: 1;
+.step{
+    display:grid;
+    grid-template-columns:42px 1fr;
+    gap:22px;
+    align-items:flex-start;
 }
 
-.labelCol {
-  min-width: 0;
-  width: 100%;
+.lineColumn{
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
 }
 
-.journeyDot {
-  flex-shrink: 0;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: #254bdb;
-  box-shadow: 0 0 0 3px #f8faff;
+.node{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    background:#2445cd;
+    box-shadow:
+    0 0 0 8px rgba(36,69,205,.08),
+    0 0 22px rgba(36,69,205,.35);
+    animation:pulseNode 3.5s infinite;
+    z-index:2;
 }
 
-.journeyBox {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 0.8rem 1rem;
-  border: 1px solid #e8eef5;
-  font-family: "Manrope", sans-serif !important;
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: #1f2937;
-  line-height: 1.35;
+.line{
+    position:relative;
+    width:3px;
+    flex:1;
+    min-height:82px;
+    margin-top:8px;
+    border-radius:999px;
+    background:rgba(36,69,205,.12);
+    overflow:hidden;
 }
 
-.journeyPlain {
-  display: block;
-  padding: 0.55rem 0 0.55rem 0.15rem;
-  font-family: "Manrope", sans-serif !important;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #374151;
-  line-height: 1.4;
+.line::after{
+    content:"";
+    position:absolute;
+    left:0;
+    top:-100%;
+    width:100%;
+    height:100%;
+    background:linear-gradient(
+        to bottom,
+        transparent,
+        #4B74FF,
+        #2445CD,
+        transparent
+    );
+    animation:flowDown 3s linear infinite;
 }
 
-.journeyStepHighlight {
-  padding: 0.2rem 0;
+.stepCard{
+    position:relative;
+    overflow:hidden;
+    border-radius:22px;
+    padding:24px;
+    transition:
+    transform .45s ease,
+    box-shadow .45s ease,
+    border-color .45s ease;
+    animation:cardFloat 6s ease-in-out infinite;
 }
 
-.journeyStepPlain {
-  padding: 0.1rem 0;
+.primaryCard{
+    background:rgba(255,255,255,.92);
+    border:1px solid rgba(36,69,205,.15);
+    box-shadow:
+    0 18px 40px rgba(36,69,205,.08);
 }
 
-@media (max-width: 900px) {
-  .inner {
-    grid-template-columns: 1fr;
-    align-items: start;
-  }
+.secondaryCard{
+    background:rgba(248,250,255,.75);
+    border:1px solid rgba(36,69,205,.08);
+}
 
-  .journeyCard {
-    max-width: 100%;
-    justify-self: stretch;
-  }
+.stepCard::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+    linear-gradient(
+        130deg,
+        rgba(255,255,255,.45),
+        transparent 55%
+    );
+    opacity:0;
+    transition:.45s;
+}
+
+.stepCard:hover{
+    transform:translateY(-8px);
+    box-shadow:
+    0 28px 55px rgba(36,69,205,.14);
+}
+
+.stepCard:hover::before{
+    opacity:1;
+}
+
+.stepTitle{
+    margin:0;
+    font-size:1.08rem;
+    font-weight:700;
+    color:#09142c;
+}
+
+.stepDescription{
+    margin-top:10px;
+    color:#64748b;
+    line-height:1.8;
+    font-size:.94rem;
+}
+
+@keyframes flowDown{
+
+    from{
+        top:-100%;
+    }
+
+    to{
+        top:100%;
+    }
+
+}
+
+@keyframes pulseNode{
+
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.18);
+    }
+
+}
+
+@keyframes cardFloat{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-6px);
+    }
+
+}
+
+@keyframes floatBlur{
+
+    0%,100%{
+        transform:translate(0,0);
+    }
+
+    50%{
+        transform:translate(30px,-25px);
+    }
+
+}
+
+@keyframes shineText{
+
+    0%{
+        background-position:-300px;
+    }
+
+    100%{
+        background-position:700px;
+    }
+
+}
+
+@media(max-width:992px){
+
+    .container{
+        grid-template-columns:1fr;
+        gap:70px;
+    }
+
+    .left{
+        max-width:100%;
+    }
+
+    .timelineCard{
+        padding:34px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .section{
+        padding:90px 24px;
+    }
+
+    .title{
+        font-size:2.5rem;
+    }
+
+    .timelineCard{
+        padding:28px;
+    }
+
+    .step{
+        grid-template-columns:30px 1fr;
+        gap:16px;
+    }
+
+    .line{
+        min-height:70px;
+    }
+
+}
+
+@media(prefers-reduced-motion:reduce){
+
+    .section *,
+    .section::before,
+    .section::after{
+
+        animation:none!important;
+        transition:none!important;
+
+    }
+
 }

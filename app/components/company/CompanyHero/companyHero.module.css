@@ -1,151 +1,808 @@
-.hero {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2.5rem;
-  min-height: 520px;
-  max-height: 580px;
-  padding: 2.5rem clamp(2rem, 5vw, 4rem);
-  margin-bottom: 0;
-  background: #2445cd;
-  overflow: hidden;
-  z-index: 0;
+.hero{
+    position:relative;
+    overflow:hidden;
+    padding:170px 7% 120px;
+    background:
+        linear-gradient(
+            180deg,
+            #eef5ff 0%,
+            #f7fbff 45%,
+            #ffffff 100%);
 }
 
-.backgroundImage {
-  position: absolute;
-  inset: 0;
-  background-image: url("/assets/Circle.png");
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-  pointer-events: none;
+/*==========================
+BACKGROUND
+==========================*/
+
+.hero::before{
+    content:"";
+    position:absolute;
+    width:900px;
+    height:900px;
+    border-radius:50%;
+    top:-420px;
+    right:-260px;
+
+    background:
+    radial-gradient(
+        rgba(36,69,205,.12),
+        transparent 72%);
+
+    pointer-events:none;
 }
 
-.contentWrapper {
-  position: relative;
-  z-index: 12;
-  display: flex;
-  flex-direction: column;
-  gap: 1.75rem;
-  width: 52%;
-  max-width: 640px;
+.hero::after{
+    content:"";
+    position:absolute;
+    width:760px;
+    height:760px;
+    border-radius:50%;
+    bottom:-320px;
+    left:-220px;
+
+    background:
+    radial-gradient(
+        rgba(76,132,255,.08),
+        transparent 70%);
+
+    pointer-events:none;
 }
 
-.title {
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  font-size: clamp(2rem, 2.5vw + 1rem, 2.75rem);
-  line-height: 1.08;
-  letter-spacing: -0.03em;
-  font-weight: 700;
-  color: #ffffff;
-  font-family: "Manrope", sans-serif !important;
+.blurOne{
+    position:absolute;
+    width:340px;
+    height:340px;
+    border-radius:50%;
+
+    background:#2445CD;
+    opacity:.08;
+    filter:blur(90px);
+
+    top:140px;
+    left:-80px;
 }
 
-.titleLine {
-  display: block;
+.blurTwo{
+    position:absolute;
+    width:300px;
+    height:300px;
+    border-radius:50%;
+
+    background:#7aa9ff;
+    opacity:.10;
+    filter:blur(80px);
+
+    right:0;
+    bottom:70px;
 }
 
-.contentSection {
-  max-width: 580px;
+/*==========================
+CONTAINER
+==========================*/
+
+.container{
+    position:relative;
+    z-index:2;
+
+    max-width:1150px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
 }
 
-.subtitle {
-  margin: 0;
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 1.05rem;
-  line-height: 1.65;
-  font-weight: 500;
-  font-family: "Manrope", sans-serif !important;
+/*==========================
+LABEL
+==========================*/
+
+.label{
+
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:10px 22px;
+
+    border-radius:999px;
+
+    background:
+    rgba(36,69,205,.08);
+
+    border:1px solid
+    rgba(36,69,205,.12);
+
+    color:#2445CD;
+
+    font-size:.76rem;
+
+    font-weight:700;
+
+    letter-spacing:.22em;
+
+    text-transform:uppercase;
+
+    backdrop-filter:blur(18px);
+
+    margin-bottom:26px;
 }
 
-.actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
+/*==========================
+TITLE
+==========================*/
+
+.title{
+
+    max-width:870px;
+
+    margin:0;
+
+    font-family:"Manrope",sans-serif;
+
+    /* Slightly reduced from clamp(2.8rem,5vw,4.6rem) so the headline breathes
+       instead of overwhelming the viewport as one uniform block */
+    font-size:clamp(2.4rem,4.2vw,3.9rem);
+
+    line-height:1.22;
+
+    font-weight:800;
+
+    letter-spacing:-0.04em;
+
+    color:#0b1426;
 }
 
-.primaryBtn,
-.secondaryBtn {
-  border-radius: 999px;
-  padding: 0.7rem 1.5rem;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  white-space: nowrap;
-  letter-spacing: 0.01em;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-family: "Manrope", sans-serif !important;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+/* The key differentiating phrase — "one orchestration layer" — pulled out
+   in brand blue so the eye has a clear landing point instead of one flat
+   block of black text */
+.titleHighlight{
+
+    background:linear-gradient(120deg, #2445CD 0%, #4c84ff 60%, #2445CD 100%);
+    background-size:200% 100%;
+
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+
+    animation:highlightShine 6s linear infinite;
 }
 
-.primaryBtn {
-  border: 0;
-  background: #ffffff;
-  color: #2445cd;
+/*==========================
+SUBTITLE
+==========================*/
+
+.subtitle{
+
+    /* Tightened from 28px so headline + subtitle read as one connected
+       thought rather than two separate blocks */
+    margin-top:20px;
+
+    max-width:720px;
+
+    font-size:1.12rem;
+
+    line-height:1.85;
+
+    color:#64748B;
 }
 
-.primaryBtn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+/*==========================
+LINKEDIN BADGE
+==========================*/
+
+.linkedinBadge{
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    margin-top:26px;
+
+    padding:9px 20px;
+
+    border-radius:999px;
+
+    background:rgba(255,255,255,.72);
+
+    border:1px solid rgba(36,69,205,.14);
+
+    backdrop-filter:blur(18px);
+
+    color:#2445CD;
+
+    font-family:"Manrope",sans-serif;
+    font-size:.85rem;
+    font-weight:600;
+
+    text-decoration:none;
+
+    box-shadow:0 10px 28px rgba(36,69,205,.08);
+
+    transition:
+    transform .3s ease,
+    background .3s ease,
+    box-shadow .3s ease;
 }
 
-.secondaryBtn {
-  border: 0;
-  background: rgba(255, 255, 255, 0.25);
-  color: #2445cd;
-  backdrop-filter: blur(4px);
+.linkedinBadge:hover{
+
+    transform:translateY(-2px);
+
+    background:rgba(36,69,205,.06);
+
+    box-shadow:0 14px 34px rgba(36,69,205,.14);
 }
 
-.secondaryBtn:hover {
-  background: rgba(255, 255, 255, 0.32);
-  transform: translateY(-2px);
+.linkedinIcon{
+
+    width:16px;
+    height:16px;
+
+    flex-shrink:0;
 }
 
-.imageWrapper {
-  position: relative;
-  z-index: 12;
-  width: 42%;
-  max-width: 480px;
-  flex-shrink: 0;
+/*==========================
+STATS
+==========================*/
+
+.stats{
+
+    margin-top:60px;
+
+    width:100%;
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:28px;
 }
 
-.heroImage {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
+.statCard{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:38px 30px;
+
+    border-radius:28px;
+
+    background:
+    rgba(255,255,255,.72);
+
+    border:
+    1px solid rgba(255,255,255,.7);
+
+    backdrop-filter:blur(24px);
+
+    box-shadow:
+    0 20px 60px rgba(31,60,136,.08);
+
+    transition:
+    transform .45s ease,
+    box-shadow .45s ease,
+    border-color .45s ease;
 }
 
-@media (max-width: 1024px) {
-  .hero {
-    min-height: auto;
-    max-height: none;
-    padding: 2.25rem clamp(1.5rem, 4vw, 2.5rem) 2.5rem;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-  }
+.statCard:hover{
 
-  .contentWrapper,
-  .imageWrapper {
-    width: 100%;
-    max-width: 100%;
-  }
+    transform:
+    translateY(-10px);
+
+    border-color:
+    rgba(36,69,205,.18);
+
+    box-shadow:
+    0 30px 70px rgba(36,69,205,.12);
 }
 
-@media (max-width: 640px) {
-  .title {
-    font-size: 1.85rem;
-  }
+.statCard h3{
 
-  .actions {
-    width: 100%;
-  }
+    margin:0;
+
+    font-size:2.3rem;
+
+    font-weight:800;
+
+    color:#2445CD;
+
+    letter-spacing:-.04em;
+}
+
+.statCard span{
+
+    display:block;
+
+    margin-top:12px;
+
+    color:#64748B;
+
+    font-size:.95rem;
+
+    line-height:1.6;
+}
+
+/*==========================
+GLASS HIGHLIGHT
+==========================*/
+
+.statCard::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:-40%;
+
+    top:0;
+
+    width:60%;
+
+    height:100%;
+
+    transform:skewX(-28deg);
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        transparent,
+
+        rgba(255,255,255,.45),
+
+        transparent);
+}
+
+/*==========================
+RIGHT SIDE
+==========================*/
+
+.right{
+
+    margin-top:65px;
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+}
+
+.floatingCard{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    padding:18px 26px;
+
+    border-radius:999px;
+
+    background:
+
+    rgba(255,255,255,.78);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid
+    rgba(255,255,255,.8);
+
+    color:#0F172A;
+
+    font-weight:600;
+
+    box-shadow:
+    0 15px 45px rgba(36,69,205,.10);
+}
+
+.dot{
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    background:#3DDC84;
+}
+
+/*==================================================
+DIVIDER
+==================================================*/
+
+.divider{
+
+    width:120px;
+    height:1px;
+
+    margin:52px auto 0;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        rgba(36,69,205,.35),
+        transparent);
+}
+
+/*==================================================
+MOVING GRID
+==================================================*/
+
+.grid{
+
+    position:absolute;
+    inset:0;
+
+    background-image:
+
+    linear-gradient(
+        rgba(36,69,205,.05) 1px,
+        transparent 1px),
+
+    linear-gradient(
+        90deg,
+        rgba(36,69,205,.05) 1px,
+        transparent 1px);
+
+    background-size:64px 64px;
+
+    opacity:.55;
+
+    animation:gridMove 35s linear infinite;
+
+    pointer-events:none;
+}
+
+/*==================================================
+NOISE
+==================================================*/
+
+.noise{
+
+    position:absolute;
+    inset:0;
+
+    opacity:.04;
+
+    background-image:
+    radial-gradient(circle,#000 1px,transparent 1px);
+
+    background-size:18px 18px;
+
+    pointer-events:none;
+}
+
+/*==================================================
+CONTINUOUS MOTION
+==================================================*/
+
+.blurOne{
+
+    animation:
+    blobOne 14s ease-in-out infinite;
+}
+
+.blurTwo{
+
+    animation:
+    blobTwo 18s ease-in-out infinite;
+}
+
+.label{
+
+    animation:
+    floatSmall 7s ease-in-out infinite;
+}
+
+.statCard{
+
+    animation:
+    cardFloat 9s ease-in-out infinite;
+}
+
+.statCard:nth-child(2){
+
+    animation-delay:1.2s;
+}
+
+.statCard:nth-child(3){
+
+    animation-delay:2.4s;
+}
+
+.statCard::before{
+
+    animation:
+    glassSweep 7s linear infinite;
+}
+
+.floatingCard{
+
+    animation:
+    floatBadge 8s ease-in-out infinite;
+}
+
+.dot{
+
+    animation:
+    pulseDot 2.2s ease infinite;
+}
+
+/*==================================================
+HOVER
+==================================================*/
+
+.statCard:hover{
+
+    transform:
+    translateY(-10px)
+    scale(1.02);
+}
+
+/*==================================================
+KEYFRAMES
+==================================================*/
+
+@keyframes highlightShine{
+
+    0%{
+
+        background-position:200% 0;
+    }
+
+    100%{
+
+        background-position:-200% 0;
+    }
+
+}
+
+@keyframes gridMove{
+
+    from{
+
+        background-position:0 0;
+    }
+
+    to{
+
+        background-position:64px 64px;
+    }
+
+}
+
+@keyframes blobOne{
+
+    0%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+    }
+
+    50%{
+
+        transform:
+        translate(60px,-35px)
+        scale(1.18);
+    }
+
+    100%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+    }
+
+}
+
+@keyframes blobTwo{
+
+    0%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+    }
+
+    50%{
+
+        transform:
+        translate(-55px,40px)
+        scale(.9);
+    }
+
+    100%{
+
+        transform:
+        translate(0,0)
+        scale(1);
+    }
+
+}
+
+@keyframes cardFloat{
+
+    0%{
+
+        transform:translateY(0);
+    }
+
+    50%{
+
+        transform:translateY(-8px);
+    }
+
+    100%{
+
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes glassSweep{
+
+    from{
+
+        left:-60%;
+    }
+
+    to{
+
+        left:150%;
+    }
+
+}
+
+@keyframes floatSmall{
+
+    0%{
+
+        transform:translateY(0);
+    }
+
+    50%{
+
+        transform:translateY(-6px);
+    }
+
+    100%{
+
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes floatBadge{
+
+    0%{
+
+        transform:translateY(0);
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+    }
+
+    100%{
+
+        transform:translateY(0);
+    }
+
+}
+
+@keyframes pulseDot{
+
+    0%{
+
+        transform:scale(1);
+        opacity:1;
+    }
+
+    50%{
+
+        transform:scale(1.45);
+        opacity:.55;
+    }
+
+    100%{
+
+        transform:scale(1);
+        opacity:1;
+    }
+
+}
+
+/*==================================================
+RESPONSIVE
+==================================================*/
+
+@media(max-width:1000px){
+
+    .hero{
+
+        padding:150px 7% 100px;
+    }
+
+    .stats{
+
+        grid-template-columns:1fr;
+        gap:20px;
+        max-width:520px;
+        margin-inline:auto;
+        margin-top:55px;
+    }
+
+    .title{
+
+        font-size:clamp(2rem,6.5vw,3rem);
+    }
+
+    .subtitle{
+
+        font-size:1rem;
+    }
+
+}
+
+@media(max-width:640px){
+
+    .hero{
+
+        padding:130px 22px 90px;
+    }
+
+    .label{
+
+        font-size:.68rem;
+        letter-spacing:.16em;
+    }
+
+    .title{
+
+        line-height:1.28;
+    }
+
+    .linkedinBadge{
+
+        font-size:.8rem;
+        padding:8px 16px;
+    }
+
+    .statCard{
+
+        padding:30px 22px;
+        border-radius:22px;
+    }
+
+    .statCard h3{
+
+        font-size:2rem;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hero *,
+    .hero::before,
+    .hero::after {
+
+        animation: none !important;
+        transition: none !important;
+
+    }
+
 }

@@ -18,11 +18,11 @@
   gap: 1rem;
 }
 
-/* ---- Talk to us (home / how-it-works) ---- */
+/* ---- Talk to us (home / how-it-works) — premium dark CTA ---- */
 .talkSection {
   width: 100%;
-  padding: clamp(3.5rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
-  background: #eef2f8;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  background: #ffffff;
   box-sizing: border-box;
 }
 
@@ -30,33 +30,52 @@
   max-width: 1280px;
   width: 100%;
   margin: 0 auto;
+  background: #0f1226;
+  border-radius: 32px;
+  padding: clamp(3.5rem, 7vw, 6rem) clamp(2rem, 5vw, 4rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.talkInner::before {
+  content: "";
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 60%;
+  height: 160%;
+  background: radial-gradient(circle, rgba(36, 69, 205, 0.45) 0%, rgba(36, 69, 205, 0) 70%);
+  pointer-events: none;
 }
 
 .talkContent {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
 .talkTitle {
   margin: 0;
-  font-size: clamp(2rem, 2.5vw + 1.25rem, 3rem);
-  line-height: 1.1;
+  max-width: 640px;
+  font-size: clamp(2.25rem, 3vw + 1.25rem, 3.25rem);
+  line-height: 1.12;
   letter-spacing: -0.03em;
   font-weight: 700;
-  color: #0f0f0f;
+  color: #ffffff;
   font-family: "Manrope", sans-serif !important;
 }
 
 .talkSubtitle {
   margin: 0;
-  max-width: 620px;
-  font-size: clamp(1rem, 0.5vw + 0.95rem, 1.35rem);
-  line-height: 1.55;
-  font-weight: 500;
-  color: #1a1a1a;
+  max-width: 520px;
+  font-size: clamp(1.05rem, 0.5vw + 0.95rem, 1.25rem);
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.72);
   font-family: "Manrope", sans-serif !important;
 }
 
@@ -65,23 +84,23 @@
   align-items: center;
   justify-content: center;
   margin-top: 0.75rem;
-  padding: 0.75rem 1.5rem;
-  border-radius: 10px;
-  background: #2445cd;
-  border: 1px solid #2445cd;
-  color: #ffffff;
+  padding: 0.95rem 2.25rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid #ffffff;
+  color: #0f1226;
   font-family: "Manrope", sans-serif !important;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
   text-decoration: none;
   white-space: nowrap;
   letter-spacing: 0.01em;
-  transition: background 0.2s ease, transform 0.2s ease;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .talkCta:hover {
-  background: #1d38a8;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(255, 255, 255, 0.18);
 }
 
 .title {

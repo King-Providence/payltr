@@ -112,27 +112,82 @@
   }
 }
 
-/* ---- Benefits grid (other pages) ---- */
+/* ---- Benefits grid (Problem Section — premium redesign) ---- */
 .section {
   width: 100%;
-  padding: 0rem 1rem;
-  padding-bottom: 5rem;
+  padding: 5rem clamp(1.5rem, 4vw, 4rem) 5.5rem;
+  background: #eef1f8;
+  position: relative;
   overflow: hidden;
 }
 
+/* subtle dot-pattern accent, top-right corner */
+.section::before {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  width: 140px;
+  height: 100px;
+  background-image: radial-gradient(#c7d1ea 1.5px, transparent 1.5px);
+  background-size: 14px 14px;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
 .inner {
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.75rem;
+  position: relative;
+  z-index: 1;
 }
 
-.lastContent {
+.sectionHeading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
   text-align: center;
-  font-weight: 700;
-  color: #000000;
+  max-width: 640px;
+  margin: 0 auto;
 }
 
+.sectionBadge {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #2445cd;
+  font-family: "Manrope", sans-serif !important;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  background: #e4eafb;
+  border-radius: 999px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: clamp(1.85rem, 2.2vw + 1rem, 2.5rem);
+  line-height: 1.2;
+  font-weight: 700;
+  color: #0f0f0f;
+  font-family: "Manrope", sans-serif !important;
+  letter-spacing: -0.02em;
+}
+
+.sectionSubtitle {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.55;
+  font-weight: 500;
+  color: #5b6472;
+  font-family: "Manrope", sans-serif !important;
+}
+
+/* kept for older usages that reference .kicker / .lastContent directly */
 .kicker {
   font-size: 1.5rem;
   color: #000000;
@@ -141,52 +196,118 @@
   font-weight: 700;
   max-width: 1200px;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0;
-  box-sizing: border-box;
+  margin: 0 auto;
   text-align: left;
+}
+
+.lastContent {
+  text-align: center;
+  font-weight: 700;
+  color: #000000;
 }
 
 .grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: clamp(1.25rem, 2.5vw, 2rem);
+  gap: clamp(1.1rem, 2vw, 1.5rem);
   align-items: stretch;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-bottom: 0.5rem;
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 0;
-  margin: 0;
-  max-width: none;
-  padding: 0;
+  padding: 1.75rem 1.5rem 1.75rem;
   box-sizing: border-box;
   height: 100%;
-  min-height: 0;
   background: #ffffff;
-  border: 1px solid #e1e6ef;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid #e9edf5;
+  border-radius: 16px;
+  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .card:hover,
 .card:focus-within {
-  border-color: #2445cd;
-  box-shadow: 0 0 0 1px rgba(36, 69, 205, 0.06);
+  transform: translateY(-2px);
+  border-color: #d7e0f5;
+  box-shadow: 0 10px 28px rgba(36, 69, 205, 0.1);
 }
 
+/* numbered pill badge, top-right of card */
+.cardBadge {
+  position: absolute;
+  top: 1.1rem;
+  right: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  background: #e4eafb;
+  color: #2445cd;
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* circular icon background */
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #e4eafb;
+  margin-bottom: 1.1rem;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: #2445cd;
+  line-height: 1;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.iconFallback {
+  font-family: "Manrope", sans-serif !important;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #2445cd;
+  line-height: 1;
+}
+
+/* short blue underline between icon and title */
+.iconUnderline {
+  display: block;
+  width: 24px;
+  height: 3px;
+  border-radius: 2px;
+  background: #2445cd;
+  margin-bottom: 1rem;
+}
+
+/* legacy image-based card path (kept intact for other pages reusing this component) */
 .graphicBox {
   position: relative;
   width: 100%;
   background: #eef2f6;
   overflow: hidden;
   flex-shrink: 0;
+  border-radius: 10px;
+  margin-bottom: 1rem;
 }
 
 .graphicBoxCover {
@@ -247,17 +368,16 @@
 }
 
 .cardText {
-  padding: 12px 14px 14px;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 0.5rem;
   flex: 1 1 auto;
   min-height: 0;
 }
 
 .cardTitle {
   margin: 0;
-  font-size: clamp(0.95rem, 0.4vw + 0.85rem, 1.05rem);
+  font-size: 1.05rem;
   line-height: 1.35;
   font-weight: 700;
   color: #0f0f0f;
@@ -267,10 +387,10 @@
 
 .cardBody {
   margin: 0;
-  font-size: clamp(0.82rem, 0.3vw + 0.76rem, 0.92rem);
-  line-height: 1.45;
+  font-size: 0.9rem;
+  line-height: 1.5;
   font-weight: 500;
-  color: #4b5563;
+  color: #5b6472;
   font-family: "Manrope", sans-serif !important;
   text-align: left;
 }
@@ -319,12 +439,15 @@
 
 @media (max-width: 760px) {
   .section {
-    padding: 0rem 1.5rem;
-    padding-bottom: 3rem;
+    padding: 3.5rem 1.5rem 3.5rem;
   }
 
-  .inner {
-    padding: 0;
+  .section::before {
+    display: none;
+  }
+
+  .sectionHeading {
+    max-width: none;
   }
 
   .kicker {
@@ -334,5 +457,9 @@
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 1.5rem 1.25rem;
   }
 }

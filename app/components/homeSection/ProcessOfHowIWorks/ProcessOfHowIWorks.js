@@ -1,10 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
+import { FiGrid, FiGitBranch, FiShield, FiSend, FiArrowRight } from "react-icons/fi";
 import styles from "./processOfHowIWorks.module.css";
 
-const STEP_ICON = "/assets/home/howitwork.svg";
+const STEP_ICONS = [FiGrid, FiGitBranch, FiShield, FiSend];
 
 const MERCHANT_BENEFITS = [
   "Up to 120 days before first repayment",
@@ -35,54 +35,48 @@ const PARTNER_BENEFITS = [
 const STEPS = [
   {
     step: 1,
-    title: "Integrate PayLTR",
-    description: "Connect once using our API.",
+    title: "One integration",
+    description:
+      "Connect once to access our orchestration layer. Your platform surfaces the financing option; PayLTR handles everything else.",
   },
   {
     step: 2,
-    title: "Offer Financing",
+    title: "Automated workflows",
     description:
-      "Embed financing inside your merchant portal, onboarding or dashboard.",
+      "Application intake, Open Banking analysis, eligibility assessment and funding partner routing are fully orchestrated.",
   },
   {
     step: 3,
-    title: "Smart Eligibility",
+    title: "No lending licence required",
     description:
-      "PayLTR evaluates merchants and routes them to the most suitable funding partner.",
+      "PayLTR connects your platform to regulated funding partners while you remain focused on your core business.",
   },
   {
     step: 4,
-    title: "Funding",
+    title: "Faster go-live",
     description:
-      "Approved merchants receive working capital with flexible repayment options.",
-  },
-  {
-    step: 5,
-    title: "Monitor Everything",
-    description:
-      "Track applications, approvals and performance through one partner dashboard.",
+      "Launch embedded financing in weeks instead of building it from scratch.",
   },
 ];
 
-function StepIcon() {
-  return (
-    <Image
-      src={STEP_ICON}
-      alt=""
-      width={40}
-      height={40}
-      className={styles.stepIcon}
-    />
-  );
-}
+function StepCard({ step, index }) {
+  const Icon = STEP_ICONS[index];
+  const badgeNumber = String(step.step).padStart(2, "0");
 
-function StepCard({ step, column }) {
   return (
-    <article className={`${styles.stepCard} ${styles[`stepCol${column}`]}`}>
-      <StepIcon />
+    <article className={styles.stepCard}>
+      <div className={styles.cardTop}>
+        <div className={styles.iconCircle}>
+          <Icon className={styles.stepIconSvg} aria-hidden="true" />
+        </div>
+        <span className={styles.stepBadge}>{badgeNumber}</span>
+        <FiArrowRight className={styles.stepArrow} aria-hidden="true" />
+      </div>
+
       <p className={styles.stepLabel}>Step {step.step}</p>
       <h3 className={styles.stepTitle}>{step.title}</h3>
       <p className={styles.stepDescription}>{step.description}</p>
+
       {step.bullets ? (
         <ul className={styles.stepList}>
           {step.bullets.map((item) => (
@@ -92,10 +86,10 @@ function StepCard({ step, column }) {
       ) : null}
       {step.flow ? (
         <div className={styles.stepFlow}>
-          {step.flow.map((item, index) => (
+          {step.flow.map((item, i) => (
             <div key={item} className={styles.flowItem}>
               <p>{item}</p>
-              {index < step.flow.length - 1 ? (
+              {i < step.flow.length - 1 ? (
                 <span className={styles.flowArrow} aria-hidden>
                   ↓
                 </span>
@@ -111,6 +105,7 @@ function StepCard({ step, column }) {
 export default function ProcessOfHowIWorks() {
   return (
     <div className={styles.wrapper}>
+      {/*
       <div className={styles.topBlocks}>
         <section className={styles.financingBanner} data-aos="fade-up">
           <div className={styles.bannerPattern} aria-hidden />
@@ -174,26 +169,23 @@ export default function ProcessOfHowIWorks() {
           </div>
         </section>
       </div>
+      */}
 
       <section className={styles.howSection} id="how-it-works" data-aos="fade-up">
+        <div className={styles.howDots} aria-hidden="true" />
+        <div className={styles.howCurve} aria-hidden="true" />
+
         <div className={styles.howInner}>
           <div className={styles.howHeader}>
-            <div className={styles.howHeaderText}>
-              <h2 className={styles.howTitle}>How It Works</h2>
-              <p className={styles.howSubtitle}>Get financed in 5 simple steps</p>
-            </div>
-            <Link href="/how-it-works" className={styles.howBtn}>
-              See the full process
-            </Link>
+            <span className={styles.howKicker}>How it works</span>
+            <h2 className={styles.howTitle}>
+              Deploy embedded lending without operational complexity.
+            </h2>
           </div>
 
           <div className={styles.stepsGrid}>
-            {STEPS.map((step) => (
-              <StepCard
-                key={step.step}
-                step={step}
-                column={step.step % 2 === 1 ? 1 : 2}
-              />
+            {STEPS.map((step, index) => (
+              <StepCard key={step.step} step={step} index={index} />
             ))}
           </div>
         </div>

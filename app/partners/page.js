@@ -6,12 +6,16 @@ import styles from "../page.module.css";
 import PartnersHero from "../components/partners/PartnersHero/PartnersHero";
 import PartnersLiquidity from "../components/partners/PartnersLiquidity/PartnersLiquidity";
 import PartnersArchitecture from "../components/partners/PartnersArchitecture/PartnersArchitecture";
+import PartnersIndustries from "../components/partners/PartnersIndustries/PartnersIndustries";
+import PartnersRequirements from "../components/partners/PartnersRequirements/PartnersRequirements";
 import PartnersCta from "../components/partners/PartnersCta/PartnersCta";
 import {
   partnersArchitectureContent,
   partnersCtaContent,
   partnersHeroContent,
   partnersLiquidityContent,
+  partnersIndustriesContent,
+  partnersRequirementsContent,
 } from "@/utils/partners";
 import { useTranslation } from "react-i18next";
 import "@/lib/i18n";
@@ -25,8 +29,13 @@ export default function PartnersPage() {
       <Navbar />
       <main className={styles.main}>
         <PartnersHero content={translateUtilContent(partnersHeroContent, t)} />
+
         <PartnersLiquidity content={translateUtilContent(partnersLiquidityContent, t)} />
+
         <PartnersArchitecture content={translateUtilContent(partnersArchitectureContent, t)} />
+
+        <PartnersIndustries   content={translateUtilContent(partnersIndustriesContent, t)} />
+        <PartnersRequirements content={translateUtilContent(partnersRequirementsContent, t)} />
         <PartnersCta content={translateUtilContent(partnersCtaContent, t)} />
       </main>
       <Footer />

@@ -5,6 +5,50 @@ import { LuShield } from "react-icons/lu";
 import { IoDocumentTextOutline } from "react-icons/io5";
 import { FiLock } from "react-icons/fi";
 import { TbTargetArrow } from "react-icons/tb";
+import { FiServer, FiClock, FiTrendingDown } from "react-icons/fi";
+import { TbRoute } from "react-icons/tb";
+import { FiUserCheck, FiZap, FiTrendingUp, FiRefreshCw } from "react-icons/fi";
+import { FiActivity, FiShuffle, FiTarget } from "react-icons/fi";
+
+export const openBankingContent = {
+  title: "Powered by real business data.",
+  subtitle:
+    "Using Open Banking and transaction intelligence, PayLTR assesses business performance before applications are routed to the funding partner.",
+  cards: [
+    {
+      icon: <FiActivity />,
+      title: "Live cashflow insights",
+      body: "Real-time business transaction analysis via PSD2 open banking.",
+    },
+    {
+      icon: <FiTrendingUp />,
+      title: "Better affordability assessment",
+      body: "Evaluate repayment capacity using operational data, not paperwork.",
+    },
+    {
+      icon: <FiShuffle />,
+      title: "Smarter routing",
+      body: "Eligible applications are automatically routed to the appropriate funding partner.",
+    },
+    {
+      icon: <FiTarget />,
+      title: "120-day deferral design",
+      body: "Our credit engine is calibrated specifically to assess repayment capacity after a 120-day gap — a capability no generic lender offers.",
+    },
+  ],
+};
+
+export const partnerBenefitsContent = {
+  title: "Strengthen your existing customer relationships.",
+  subtitle:
+    "Your SME customers already trust your platform. Now they can also access financing exactly when they need it.",
+  cards: [
+    { icon: <FiUserCheck />, title: "Increase customer retention", body: "Keep customers inside your ecosystem instead of sending them to external lenders." },
+    { icon: <FiZap />, title: "Increase platform engagement", body: "Offer financing at the moment business owners need working capital." },
+    { icon: <FiTrendingUp />, title: "Create additional revenue", body: "Generate value from financing without becoming a lender." },
+    { icon: <FiRefreshCw />, title: "Zero operational burden", body: "PayLTR manages the full process — application, assessment, funding, repayment. You refer, we orchestrate." },
+  ],
+};
 
 export const ecosystemGridContent = {
   variant: "ecosystem",
@@ -17,6 +61,33 @@ export const ecosystemGridContent = {
     { title: "Accounting Software", image: "/assets/home/accounting.svg" },
     { title: "Marketplaces", image: "/assets/home/paymentproviders.svg" },
     { title: "B2B Platforms", image: "/assets/home/B2B.svg" },
+  ],
+};
+
+export const problemContent = {
+  title: "Offering SME financing is complex.",
+  showCardNumbers: false,
+  cards: [
+    {
+      icon: <FiServer />,
+      title: "No lending infrastructure",
+      body: "Building an embedded lending solution requires underwriting workflows, Open Banking connectivity, funding partners and compliance processes. Most platforms cannot build this alone.",
+    },
+    {
+      icon: <TbRoute />,
+      title: "Fragmented customer journey",
+      body: "SMEs are forced to leave your platform to search for financing elsewhere, resulting in lower engagement and customer retention.",
+    },
+    {
+      icon: <FiClock />,
+      title: "Slow implementation",
+      body: "Developing lending capabilities internally requires significant investment, technical resources and regulatory expertise.",
+    },
+    {
+      icon: <FiTrendingDown />,
+      title: "Missed revenue opportunity",
+      body: "Every SME customer who finds financing elsewhere is value your platform could have captured.",
+    },
   ],
 };
 
@@ -187,10 +258,10 @@ export const homefaq = {
 
 export const getStartedContent={
     variant: "talkToUs",
-    title: "Ready to offer business finance?",
+    title: "Ready to offer financing to your SME customers?",
     description:
-      "Become the platform your merchants rely on for growth.",
-    ctaText: "Become a Partner",
+      "One integration. Zero credit risk. Revenue from every funded deal.",
+    ctaText: "Become a partner",
     ctaHref: "/partners",
 }
 

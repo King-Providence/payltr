@@ -83,22 +83,22 @@
   transform: scale(1.05);
 }
 .icon {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   color: white;
-  background: #2445cd4d;
-  /* padding: 0.5rem; */
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  min-height: 40px;
+  background: #2445cd;
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  min-height: 48px;
   flex-shrink: 0;
   flex-grow: 0;
   align-self: flex-start;
-  border-radius:5px;
+  border-radius: 12px;
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 6px 16px rgba(36, 69, 205, 0.28);
 }
 .image{
   width: 100%;

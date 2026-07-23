@@ -1,40 +1,53 @@
 .header {
-  width: 100%;
-  background:white;
-  /* background:hsla(0,0%,100%,.8); */
-  padding:1rem 3rem;
+  width: auto;
+  max-width: 1280px;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  padding: 1.1rem 2.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 20px;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 1rem;
+  left: 1.25rem;
+  right: 1.25rem;
+  margin: 0 auto;
   z-index: 1000;
-  transition: transform 200ms ease;
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 10px 40px rgba(36, 69, 205, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 300ms ease, padding 300ms ease, box-shadow 300ms ease,
+    background 300ms ease;
   will-change: transform;
   font-family: "Plus Jakarta Sans", sans-serif !important;
   font-weight: 400 !important;
-  box-shadow: 0px 2px 20px 0px #2445CD4D;
+}
+
+.scrolled {
+  padding: 0.75rem 2.5rem;
+  background: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 14px 48px rgba(36, 69, 205, 0.16), 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .hidden {
-  transform: translateY(-120%);
+  transform: translateY(-140%);
 }
 
 .left {
   display: flex;
   align-items: center;
-  /* min-width: 180px; */
 }
 
 .center {
   display: flex;
   align-items: center;
-  gap: 28px;
+  gap: 18px; /* was 28px — tightened to fit 4 links (incl. longer "Request Loan") without stretching the pill */
 }
 
 .navLink {
+  position: relative;
   color: #1f1f1f;
   text-decoration: none;
   font-size: 1rem;
@@ -43,12 +56,15 @@
   align-items: center;
   gap: 8px;
   white-space: nowrap;
-  transition: color 0.2s ease;
+  padding: 0.45rem 0.7rem; /* was 0.45rem 0.9rem — trimmed horizontal padding, not font size, to keep spacing balanced */
+  border-radius: 999px;
+  transition: color 0.2s ease, background 0.2s ease;
 }
 
 .navLinkActive {
   color: #2445cd;
-  font-weight: 500;
+  font-weight: 600;
+  background: rgba(36, 69, 205, 0.08);
 }
 
 .navTrigger {
@@ -68,18 +84,10 @@
   box-shadow: none;
 }
 
-/* @media (hover: hover) and (pointer: fine) {
-  .navTrigger:hover {
-    transform: none;
-    box-shadow: none;
-  }
-} */
-
 .menuItemWrapper {
   position: relative;
 }
 
-/* Undo globals.css `button:hover` lift/shadow for primary nav (Products area) */
 .header .center a:hover,
 .header .center a:focus-visible,
 .header .center button:hover,
@@ -89,7 +97,11 @@
 }
 
 .header .center .navLink:hover,
-.header .center .navLink:focus-visible,
+.header .center .navLink:focus-visible {
+  background: rgba(36, 69, 205, 0.06);
+  color: #1f1f1f;
+}
+
 .header .center .navTrigger:hover,
 .header .center .navTrigger:focus-visible {
   background: transparent;
@@ -111,9 +123,8 @@
 .right {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 14px; /* was 12px — nudged up slightly now that .center is tighter, keeps the right cluster from feeling squashed against it */
   justify-content: flex-end;
-  /* min-width: 420px; */
 }
 
 .langWrapper {
@@ -238,25 +249,34 @@
   font-weight: 800;
 }
 
-
 .loginBtn {
   border: 0;
   border-radius: 10px;
   background: transparent;
   color: #1f1f1f;
-  font-weight: 600;
+  font-weight: 700; /* was 600 — bolder so it reads clearly against the filled CTA next to it */
   font-family: "Manrope", sans-serif !important;
   padding: 0.4rem 0.75rem;
   cursor: pointer;
   font-size: 0.85rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  transition: color 0.2s ease, background 0.2s ease; /* was missing — no hover feedback before */
+}
+
+.loginBtn:hover,
+.loginBtn:focus-visible {
+  color: #2445cd;
+  background: rgba(36, 69, 205, 0.06);
 }
 
 .speakBtn {
-  border-radius: 10px;
-  padding:0.5rem 1rem ;
-  background: #2445CD;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 999px;
+  padding: 0.65rem 1.35rem;
+  background: #2445cd;
   color: white;
   font-family: "Manrope", sans-serif !important;
   font-size: 0.85rem;
@@ -266,17 +286,23 @@
   letter-spacing: 0.04em;
   text-transform: uppercase;
   border: 0;
+  transition: transform 0.25s ease, filter 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 6px 18px rgba(36, 69, 205, 0.3);
 }
 
-/* @media (max-width: 1050px) {
-  .center {
-    display: none;
-  }
+.speakBtn:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(36, 69, 205, 0.4);
+}
 
-  .right {
-    min-width: auto;
-  }
-} */
+.speakBtnArrow {
+  transition: transform 0.25s ease;
+}
+
+.speakBtn:hover .speakBtnArrow {
+  transform: translateX(3px);
+}
 
 .dropdownPanel {
   position: absolute;
@@ -436,7 +462,6 @@
   margin-bottom: 16px;
 }
 
-/* Liberis-style: arrow enters from the left and settles before the label */
 .useCaseLink {
   display: inline-flex;
   align-items: center;
@@ -676,7 +701,6 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  /* padding: 0.55rem 0; */
   color: #1f1f1f;
   text-decoration: none;
   font-size: 0.9rem;
@@ -744,7 +768,11 @@
 }
 
 .mobileGetStartedBtn {
-  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
   border: 0;
   background: #2445cd;
   color: #ffffff;
@@ -752,17 +780,23 @@
   font-size: 0.95rem;
   font-weight: 600;
   cursor: pointer;
-  padding: 0.75rem 1.25rem;
+  padding: 0.85rem 1.25rem;
   width: 100%;
 }
 
-@media (max-width: 1187px) {
+@media (max-width: 1210px) {
+  /* was 1187px — widened slightly to give the 4-link nav more room before things get tight */
   .header {
-    padding: 1rem 2rem;
+    padding: 1rem 1.75rem;
+  }
+
+  .scrolled {
+    padding: 0.7rem 1.75rem;
   }
 }
 
-@media (max-width: 1151px) {
+@media (max-width: 1180px) {
+  /* was 1151px — switches to the mobile drawer a bit sooner now that there's an extra link + login button competing for space */
   .menuBurgerBtn {
     display: inline-flex;
     align-items: center;
@@ -788,8 +822,16 @@
   }
 
   .header {
+    top: 0.75rem;
+    left: 0.75rem;
+    right: 0.75rem;
     padding: 0.75rem 1.25rem;
+    border-radius: 18px;
     gap: 12px;
+  }
+
+  .scrolled {
+    padding: 0.65rem 1.25rem;
   }
 
   .left {

@@ -6,13 +6,13 @@
 }
 
 .footerInner {
+  width: min(1280px, 100%);
   margin: 0 auto;
-  padding: 0 clamp(2rem, 6vw, 6rem);
-  max-width: 1440px;
+
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  gap: clamp(2rem, 6vw, 5rem);
+  align-items: flex-start;
+  gap: clamp(2rem, 5vw, 8rem);
 }
 
 .logoMark {
@@ -31,9 +31,8 @@
 
 .columns {
   display: flex;
-  gap: clamp(1rem, 4vw, 3rem);
-  align-items: flex-start;
-  flex-shrink: 0;
+  gap: clamp(1.5rem, 4vw, 5rem);
+  flex-wrap: nowrap;
 }
 
 .column {
@@ -44,35 +43,37 @@
 .pillStack {
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  align-items: stretch;
+  gap: 1rem;
 }
 
 .pillLink {
-  display: inline-flex;
+  width: clamp(180px, 18vw, 220px);
+  min-height: 56px;
+
+  display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.6rem 1.5rem;
+
+  padding: 0 1.5rem;
+
   border-radius: 999px;
-  border: 1px solid rgba(245, 247, 254, 0.18);
-  background: rgba(255, 255, 255, 0.16);
-  color: #ffffff;
+
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  color: #fff;
   text-decoration: none;
-  font-family: "Manrope", sans-serif !important;
-  font-size: 0.8rem;
-  font-weight: 600;
+
+  font-weight: 700;
+  font-size: 0.95rem;
   letter-spacing: 0.04em;
-  line-height: 1.2;
-  min-width: 150px;
-  text-align: center;
-  white-space: nowrap;
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+
+  transition: all 0.25s ease;
 }
 
 .pillLink:hover {
-  background: rgba(255, 255, 255, 0.28);
-  border-color: rgba(255, 255, 255, 0.5);
-  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
 }
 
 @media (max-width: 900px) {
@@ -92,25 +93,25 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 768px) {
   .footerInner {
-    padding: 0 1.25rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   .columns {
     flex-direction: column;
-    align-items: center;
-    gap: 14px;
     width: 100%;
+    align-items: center;
   }
 
-  .pillStack {
+  .column {
     width: 100%;
     align-items: center;
   }
 
   .pillLink {
-    width: 100%;
-    max-width: 320px;
+    width: min(320px, 90vw);
   }
 }

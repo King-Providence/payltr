@@ -10,9 +10,14 @@ const FOOTER_COLUMNS = [
     { label: "PARTNERS", href: "/partners" },
     { label: "COMPANY", href: "/company" },
   ],
+
   [
     { label: "CONTACT US", href: "/contact" },
     { label: "HOW IT WORKS", href: "/how-it-works" },
+    { label: "FAQ", href: "/faq" },
+    { label: "COOKIE POLICY", href: "/cookiebeleid" },
+    { label: "PRIVACY POLICY", href: "/privacy-policy" },
+    { label: "TERMS OF SERVICE", href: "/terms-of-service" },
   ],
 ];
 
@@ -44,7 +49,11 @@ export default function Footer() {
             <div className={styles.column} key={columnIndex}>
               <div className={styles.pillStack}>
                 {column.map((link) => (
-                  <PillLink key={link.label} label={link.label} href={link.href} />
+                  <PillLink
+                    key={link.label}
+                    label={link.label}
+                    href={link.href}
+                  />
                 ))}
               </div>
             </div>

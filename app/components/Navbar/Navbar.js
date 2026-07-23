@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { FiGlobe } from "react-icons/fi";
+import { FiGlobe, FiArrowRight } from "react-icons/fi";
 import { useRouter, usePathname } from "next/navigation";
 import { useTranslation } from "react-i18next";
 
@@ -26,10 +26,15 @@ const REGION_DISPLAY = {
 
 const NAV_LINKS = [
   { labelKey: "navbar.home", fallback: "Home", href: "/" },
-  { labelKey: "navbar.partners", fallback: "Partners", href: "/partners" },
-  { labelKey: "navbar.company", fallback: "Company", href: "/company" },
-  { labelKey: "navbar.howItWorks", fallback: "How it works", href: "/how-it-works" },
+  { labelKey: "navbar.partners", fallback: "For Partners", href: "/partners" },
+  { labelKey: "navbar.about", fallback: "About", href: "/company" },
+  // TODO: confirm real route for the Request Loan page — placeholder below
+  { labelKey: "navbar.requestLoan", fallback: "Request Loan", href: "/auth" },
 ];
+
+// TODO: confirm real login destination — placeholder below (could be an external
+// subdomain like app.payltr.eu/login instead of a route on this site)
+const LOGIN_HREF = "/auth";
 
 function MenuBurgerIcon({ open }) {
   return (
@@ -51,6 +56,7 @@ export default function Navbar() {
   const [isLangOpen, setIsLangOpen] = useState(false);
   const [selectedLanguageCode, setSelectedLanguageCode] = useState("EN");
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const { t } = useTranslation();
   const router = useRouter();
   const pathname = usePathname();
@@ -107,6 +113,7 @@ export default function Navbar() {
       }
 
       const y = window.scrollY || 0;
+      setScrolled(y > 12);
       const diff = y - lastScrollY.current;
       const threshold = 8;
 
@@ -172,9 +179,11 @@ export default function Navbar() {
   return (
     <>
     <header
-      className={`${styles.header} ${hidden ? styles.hidden : ""}`}
+      className={`${styles.header} ${hidden ? styles.hidden : ""} ${scrolled ? styles.scrolled : ""}`}
       data-i18n-skip="true"
       translate="no"
+      data-aos="fade-down"
+      data-aos-once="true"
     >
       <div className={styles.left}>
         <Link href="/">
@@ -248,8 +257,12 @@ export default function Navbar() {
           </div>
         </div>
 
-        <button className={styles.loginBtn} type="button" onClick={() => router.push("/auth")}>
-          {t("navbar.login", { defaultValue: "LOG IN" })}
+        <button
+          className={styles.loginBtn}
+          type="button"
+          onClick={() => router.push(LOGIN_HREF)}
+        >
+          {t("navbar.login", { defaultValue: "Log In" })}
         </button>
 
         <button
@@ -257,7 +270,8 @@ export default function Navbar() {
           type="button"
           onClick={() => router.push("/aanvragen")}
         >
-          {t("navbar.getStarted", { defaultValue: "GET STARTED" })}
+          {t("navbar.becomePartner", { defaultValue: "Become a Partner" })}
+          <FiArrowRight className={styles.speakBtnArrow} aria-hidden="true" />
         </button>
       </div>
 
@@ -341,11 +355,12 @@ export default function Navbar() {
                 className={styles.mobileLoginBtn}
                 onClick={() => {
                   closeMobileNav();
-                  router.push("/auth");
+                  router.push(LOGIN_HREF);
                 }}
               >
-                {t("navbar.login", { defaultValue: "LOG IN" })}
+                {t("navbar.login", { defaultValue: "Log In" })}
               </button>
+
               <button
                 type="button"
                 className={styles.mobileGetStartedBtn}
@@ -354,7 +369,8 @@ export default function Navbar() {
                   router.push("/aanvragen");
                 }}
               >
-                {t("navbar.getStarted", { defaultValue: "GET STARTED" })}
+                {t("navbar.becomePartner", { defaultValue: "Become a Partner" })}
+                <FiArrowRight className={styles.speakBtnArrow} aria-hidden="true" />
               </button>
             </div>
           </div>

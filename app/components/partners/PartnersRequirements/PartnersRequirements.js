@@ -1,40 +1,43 @@
 "use client";
 
-import styles from "./partnersLiquidity.module.css";
+import styles from "./partnersRequirements.module.css";
 import { useTranslatedContent } from "@/src/hooks/useTranslatedContent";
 
 import {
-  ArrowUpRight,
-  TrendingUp,
-  HeartHandshake,
+  Cable,
+  Users,
   ShieldCheck,
-  Activity,
+  Rocket,
+  ArrowUpRight,
 } from "lucide-react";
 
-export default function PartnersLiquidity({ content }) {
+export default function PartnersRequirements({ content }) {
   const translated = useTranslatedContent(content);
 
   const iconMap = {
-  trending: TrendingUp,
-  heart: HeartHandshake,
-  shield: ShieldCheck,
-  refresh: Activity,
-};
+    api: Cable,
+    users: Users,
+    shield: ShieldCheck,
+    rocket: Rocket,
+  };
 
   return (
     <section
       className={styles.section}
-      aria-labelledby="partners-liquidity-title"
+      aria-labelledby="partners-requirements-title"
     >
       <div className={styles.container}>
-        <div className={styles.header}>
+
+        {/* LEFT COLUMN */}
+
+        <div className={styles.leftColumn}>
 
           <span className={styles.eyebrow}>
-            VALUE PROPOSITION
+            {translated.eyebrow}
           </span>
 
           <h2
-            id="partners-liquidity-title"
+            id="partners-requirements-title"
             className={styles.title}
           >
             {translated.title}
@@ -44,25 +47,44 @@ export default function PartnersLiquidity({ content }) {
             {translated.subtitle}
           </p>
 
+          <div className={styles.verticalLine}></div>
+
         </div>
 
-        <div className={styles.grid}>
+        {/* RIGHT COLUMN */}
 
-          {translated.benefits.map((item) => {
+        <div className={styles.rightColumn}>
+
+          {translated.requirements.map((item) => {
+
             const Icon = iconMap[item.icon];
 
             return (
+
               <article
-                key={item.title}
+                key={item.number}
                 className={styles.card}
               >
+
                 <div className={styles.cardGlow}></div>
 
-                <div className={styles.iconWrapper}>
-                  <Icon
-                    size={22}
-                    strokeWidth={2.2}
-                  />
+                <div className={styles.cardHeader}>
+
+                  <div className={styles.iconWrapper}>
+
+                    {Icon && (
+                      <Icon
+                        size={22}
+                        strokeWidth={2.2}
+                      />
+                    )}
+
+                  </div>
+
+                  <span className={styles.number}>
+                    {item.number}
+                  </span>
+
                 </div>
 
                 <h3 className={styles.cardTitle}>
@@ -78,10 +100,13 @@ export default function PartnersLiquidity({ content }) {
                 </div>
 
               </article>
+
             );
+
           })}
 
         </div>
+
       </div>
     </section>
   );

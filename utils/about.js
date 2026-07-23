@@ -12,6 +12,7 @@ export const aboutHeroSectionContent = {
     width: "500px",
 };
 
+
 export const theTeamContent = {
   heading: "The Team",
   members: [

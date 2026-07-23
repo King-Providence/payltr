@@ -2,7 +2,15 @@ import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 import styles from "../page.module.css";
 import HowItWorksHeroSection from "../components/howItWorks/HowItWorksHeroSection/HowItWorksHeroSection";
-import { applicationProcessfaq, CostAndRepaymentfaq, FAQHeroSectionContent, productfaq } from "@/utils/faq";
+import {
+  applicationProcessfaq,
+  CostAndRepaymentfaq,
+  dataSecurityFaq,
+  FAQHeroSectionContent,
+  howPayltrWorksFaq,
+  partnerPlatformsFaq,
+  productfaq,
+} from "@/utils/faq";
 import FAQs from "../components/FAQs/FAQs";
 
 export default function FaqPage() {
@@ -10,10 +18,13 @@ export default function FaqPage() {
     <div className={styles.page}>
       <Navbar />
       <main className={styles.main}>
-      <HowItWorksHeroSection content={FAQHeroSectionContent} />
-      <FAQs details={productfaq} />
-      <FAQs details={CostAndRepaymentfaq} />
-      <FAQs details={applicationProcessfaq} />
+        <HowItWorksHeroSection content={FAQHeroSectionContent} />
+        <FAQs details={productfaq} />
+        <FAQs details={CostAndRepaymentfaq} />
+        <FAQs details={applicationProcessfaq} />
+        <FAQs details={howPayltrWorksFaq} />
+        <FAQs details={partnerPlatformsFaq} />
+        <FAQs details={dataSecurityFaq} />
       </main>
       <Footer />
     </div>

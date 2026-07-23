@@ -1,9 +1,8 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import styles from "./companyHero.module.css";
 import { useTranslatedContent } from "@/src/hooks/useTranslatedContent";
+import { FiLinkedin } from "react-icons/fi";
 
 export default function CompanyHero({ content }) {
   const translated = useTranslatedContent(content);
@@ -13,37 +12,74 @@ export default function CompanyHero({ content }) {
       className={styles.hero}
       aria-labelledby="company-hero-title"
     >
-      <div className={styles.backgroundImage} aria-hidden="true" />
+      {/* Animated Background */}
 
-      <div className={styles.contentWrapper}>
-        <h1 id="company-hero-title" className={styles.title}>
-          <span className={styles.titleLine}>{translated.titleLine1}</span>
-          <span className={styles.titleLine}>{translated.titleLine2}</span>
+      <div className={styles.blurOne}></div>
+      <div className={styles.blurTwo}></div>
+      <div className={styles.grid}></div>
+      <div className={styles.noise}></div>
+
+      <div className={styles.container}>
+        {/* Page Label */}
+
+        <span className={styles.label}>
+          {translated.label}
+        </span>
+
+        {/* Heading */}
+
+        <h1
+          id="company-hero-title"
+          className={styles.title}
+        >
+          {translated.title}{" "}
+          <span className={styles.titleHighlight}>
+            {translated.titleHighlight}
+          </span>
         </h1>
 
-        <div className={styles.contentSection}>
-          <p className={styles.subtitle}>{translated.subtitle}</p>
-        </div>
+        {/* Subtitle */}
 
-        <div className={styles.actions}>
-          <Link className={styles.primaryBtn} href={translated.ctaPlatformsHref}>
-            {translated.ctaPlatforms}
-          </Link>
-          <Link className={styles.secondaryBtn} href={translated.ctaSmesHref}>
-            {translated.ctaSmes}
-          </Link>
-        </div>
-      </div>
+        <p className={styles.subtitle}>
+          {translated.subtitle}
+        </p>
 
-      <div className={styles.imageWrapper}>
-        <Image
-          src={translated.image}
-          alt=""
-          width={1000}
-          height={1000}
-          className={styles.heroImage}
-          priority
-        />
+        {/* LinkedIn Badge */}
+
+        {translated.linkedinUrl && (
+          <a
+            href={translated.linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.linkedinBadge}
+          >
+            <FiLinkedin className={styles.linkedinIcon} aria-hidden="true" />
+            Follow PayLTR on LinkedIn
+          </a>
+        )}
+
+        {/* Divider */}
+
+        <div className={styles.divider}></div>
+
+        {/* Statistics */}
+
+        <div className={styles.stats}>
+          {translated.stats.map((item) => (
+            <div
+              key={item.label}
+              className={styles.statCard}
+            >
+              <span className={styles.statValue}>
+                {item.value}
+              </span>
+
+              <span className={styles.statLabel}>
+                {item.label}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

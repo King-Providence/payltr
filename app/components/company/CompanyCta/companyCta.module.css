@@ -1,62 +1,382 @@
+/*==========================
+SECTION / BACKGROUND (light — alternates against the dark Partner Network section before it)
+==========================*/
+
 .section {
-  padding: clamp(3.5rem, 6vw, 5rem) clamp(2rem, 5vw, 4rem);
-  background: #eef2f8;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(5rem, 8vw, 8rem) 7%;
+
+  background: linear-gradient(180deg, #eef5ff 0%, #f7fbff 50%, #ffffff 100%);
 }
+
+.blurOne {
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+
+  background: #2445cd;
+  opacity: 0.12;
+  filter: blur(130px);
+
+  top: -140px;
+  left: 50%;
+  transform: translateX(-60%);
+
+  animation: blobPulse 13s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.blurTwo {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+
+  background: #7aa9ff;
+  opacity: 0.14;
+  filter: blur(100px);
+
+  bottom: -100px;
+  right: -80px;
+
+  animation: blobTwo 18s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.blurThree {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+
+  background: #3ddc84;
+  opacity: 0.06;
+  filter: blur(90px);
+
+  bottom: 20%;
+  left: 6%;
+
+  animation: blobTwo 22s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+
+  background-image: linear-gradient(rgba(36, 69, 205, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(36, 69, 205, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+
+  opacity: 0.5;
+  animation: gridMove 35s linear infinite;
+  pointer-events: none;
+}
+
+/*==========================
+LAYOUT
+==========================*/
 
 .inner {
-  max-width: 760px;
+  position: relative;
+  z-index: 2;
+
+  max-width: 900px;
   margin: 0 auto;
-  text-align: center;
+
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1rem;
-}
-
-.title {
-  margin: 0;
-  font-family: "Manrope", sans-serif !important;
-  font-size: clamp(1.75rem, 2vw + 1rem, 2.35rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  color: #0f172a;
-}
-
-.subtitle {
-  margin: 0;
-  max-width: 520px;
-  font-family: "Manrope", sans-serif !important;
-  font-size: 1rem;
-  line-height: 1.6;
-  font-weight: 500;
-  color: #64748b;
-}
-
-.actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.85rem;
   justify-content: center;
-  margin-top: 0.75rem;
 }
 
-.cta {
+/*==========================
+CARD
+==========================*/
+
+.card {
+  position: relative;
+  overflow: hidden;
+
+  width: 100%;
+  padding: clamp(3rem, 6vw, 4.5rem) clamp(2rem, 5vw, 4rem);
+  border-radius: 40px;
+
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(28px);
+
+  box-shadow: 0 40px 100px rgba(31, 60, 136, 0.16), 0 4px 16px rgba(0, 0, 0, 0.04);
+
+  text-align: center;
+
+  opacity: 0;
+  transform: translateY(28px);
+  animation: fadeUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* Glowing animated ring around the card border — the "peak moment" signature */
+.cardGlow {
+  position: absolute;
+  inset: -2px;
+  border-radius: 42px;
+  z-index: -1;
+
+  background: conic-gradient(
+    from 0deg,
+    rgba(36, 69, 205, 0.5),
+    rgba(122, 169, 255, 0.5),
+    rgba(61, 220, 132, 0.35),
+    rgba(36, 69, 205, 0.5)
+  );
+
+  opacity: 0.6;
+  filter: blur(18px);
+
+  animation: glowSpin 8s linear infinite;
+}
+
+/*==========================
+TEXT
+==========================*/
+
+.headline {
+  margin: 0 auto 22px;
+  max-width: 680px;
+
+  font-family: "Manrope", sans-serif !important;
+  font-size: clamp(2.1rem, 4vw, 3.1rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+
+  background: linear-gradient(120deg, #0b1426 0%, #2445cd 55%, #0b1426 100%);
+  background-size: 220% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  animation: headlineShine 7s linear infinite;
+}
+
+.subheadline {
+  margin: 0 auto clamp(2.25rem, 4vw, 3rem);
+  max-width: 520px;
+
+  font-family: "Manrope", sans-serif !important;
+  font-size: 1.1rem;
+  line-height: 1.75;
+  font-weight: 500;
+  color: #475569;
+}
+
+/*==========================
+CTA BUTTONS
+==========================*/
+
+.ctaRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  position: relative;
+  overflow: hidden;
+
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: 0.8rem 1.6rem;
+  gap: 10px;
+
+  padding: 1rem 2.1rem;
   border-radius: 999px;
+
   background: #2445cd;
-  border: 1px solid #2445cd;
   color: #ffffff;
+
   font-family: "Manrope", sans-serif !important;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  transition: background 0.2s ease, transform 0.2s ease;
+
+  box-shadow: 0 16px 40px rgba(36, 69, 205, 0.35);
+
+  transition: transform 0.3s ease, filter 0.3s ease, box-shadow 0.3s ease;
 }
 
-.cta:hover {
-  background: #1d38a8;
-  transform: translateY(-1px);
+.ctaPrimary:hover {
+  filter: brightness(1.08);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 22px 50px rgba(36, 69, 205, 0.45);
+}
+
+/* Shine sweep on hover */
+.ctaPrimary::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -60%;
+  width: 40%;
+  height: 100%;
+  transform: skewX(-24deg);
+
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+
+  transition: left 0.6s ease;
+}
+
+.ctaPrimary:hover::before {
+  left: 130%;
+}
+
+.ctaIcon {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.ctaPrimary:hover .ctaIcon {
+  transform: translateX(3px);
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 1rem 2.1rem;
+  border-radius: 999px;
+
+  background: rgba(36, 69, 205, 0.06);
+  border: 1px solid rgba(36, 69, 205, 0.18);
+  color: #2445cd;
+
+  font-family: "Manrope", sans-serif !important;
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+
+  transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+.ctaSecondary:hover {
+  background: rgba(36, 69, 205, 0.1);
+  border-color: rgba(36, 69, 205, 0.3);
+  transform: translateY(-2px);
+}
+
+/*==========================
+KEYFRAMES
+==========================*/
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glowSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes headlineShine {
+  0% {
+    background-position: 220% 0;
+  }
+  100% {
+    background-position: -220% 0;
+  }
+}
+
+@keyframes blobPulse {
+  0% {
+    transform: translateX(-60%) scale(1);
+  }
+  50% {
+    transform: translateX(-60%) scale(1.15);
+  }
+  100% {
+    transform: translateX(-60%) scale(1);
+  }
+}
+
+@keyframes blobTwo {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-40px, 30px) scale(0.9);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes gridMove {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 64px 64px;
+  }
+}
+
+/*==========================
+RESPONSIVE
+==========================*/
+
+@media (max-width: 640px) {
+  .section {
+    padding: 4rem 22px;
+  }
+
+  .card {
+    padding: 2.5rem 1.75rem;
+    border-radius: 30px;
+  }
+
+  .headline {
+    font-size: clamp(1.7rem, 7vw, 2.2rem);
+  }
+
+  .subheadline {
+    font-size: 0.98rem;
+  }
+
+  .ctaRow {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .ctaPrimary,
+  .ctaSecondary {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section *,
+  .card,
+  .cardGlow,
+  .headline {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    background-position: 0 0 !important;
+  }
 }

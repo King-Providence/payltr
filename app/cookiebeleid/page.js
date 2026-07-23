@@ -95,8 +95,10 @@ export default function CookiesSettingsPage() {
                 {tr("By using our website, you agree that certain cookies may be stored on your device unless you disable them.")}
               </p>
               <p>
-                {tr("You may modify your preferences at any time via the Cookie Settings link in the footer.")}
-              </p>
+  {tr(
+    "You may modify your cookie preferences at any time via the Cookie Settings link in the footer or by contacting us at privacy@payltr.eu."
+  )}
+</p>
             </section>
 
             <section id="what-are-cookies" className={styles.section}>
@@ -181,17 +183,60 @@ export default function CookiesSettingsPage() {
             <section id="third-party-cookies" className={styles.section}>
               <h2 className={styles.sectionTitle}>{tr("4. Third-Party Cookies")}</h2>
               <p>
-                {tr("Third-party services may store cookies on your device when used on PayLTR, such as:")}
-              </p>
-              <ul className={styles.bullets}>
-                <li>{tr("Ponto (for PSD2 bank authentication pages)")}</li>
-                <li>{tr("payLTR (credit scoring visualisation components)")}</li>
-                <li>{tr("Qred (redirect-based application handover)")}</li>
-                <li>{tr("Payment processors (Stripe or Mollie)")}</li>
-              </ul>
-              <p>
-                {tr("We ensure that these services meet GDPR compliance and are contractually bound to data protection requirements.")}
-              </p>
+  {tr(
+    "Third-party services may store cookies on your device when used within the PayLTR platform, including:"
+  )}
+</p>
+
+<ul className={styles.bullets}>
+  <li>
+    <strong>{tr("Ponto (Isabel NV)")}</strong>{" "}
+    {tr(
+      "— PSD2 open banking authentication. Used during bank account verification in the application flow. Ponto is a regulated TPP under PSD2 and is GDPR compliant."
+    )}
+  </li>
+
+  <li>
+    <strong>{tr("Qeld")}</strong>{" "}
+    {tr(
+      "— Our licensed funding partner. Qeld may set session-level cookies during the credit assessment and application handover flow."
+    )}
+  </li>
+
+  <li>
+    <strong>{tr("Mollie")}</strong>{" "}
+    {tr(
+      "— Payment processor for SEPA Direct Debit mandate management and iDEAL disbursement. Mollie is PCI DSS compliant and GDPR compliant."
+    )}
+  </li>
+
+  <li>
+    <strong>{tr("Google Analytics")}</strong>{" "}
+    {tr(
+      "— Website analytics (IP anonymised). Used to understand platform usage patterns."
+    )}
+  </li>
+
+  <li>
+    <strong>{tr("LinkedIn Insights Tag")}</strong>{" "}
+    {tr(
+      "— Only activated with explicit marketing cookie consent. Used to measure B2B campaign performance."
+    )}
+  </li>
+
+  <li>
+    <strong>{tr("Meta Pixel")}</strong>{" "}
+    {tr(
+      "— Only activated with explicit marketing cookie consent."
+    )}
+  </li>
+</ul>
+
+<p>
+  {tr(
+    "We do not use Qred, Stripe, or any other payment processors not listed above. All third-party providers are contractually bound to GDPR compliance requirements."
+  )}
+</p>
             </section>
 
             <section id="cookie-retention-periods" className={styles.section}>
@@ -241,14 +286,45 @@ export default function CookiesSettingsPage() {
             <section id="contact-us" className={styles.section}>
               <h2 className={styles.sectionTitle}>{tr("8. Contact Us")}</h2>
               <p>
-                {tr("For questions regarding this Cookie Policy or your privacy rights, contact:")}
-              </p>
-              <p>
-                📧 <Link href="mailto:support@payltr.eu">support@payltr.eu</Link>
-              </p>
-              <p>
-                📞 <Link href="tel:+31684925325">+31 6 84925325</Link>
-              </p>
+  {tr(
+    "For questions regarding this Cookie Policy or your privacy rights, contact:"
+  )}
+</p>
+
+<p>
+  📧{" "}
+  <Link href="mailto:privacy@payltr.eu">
+    privacy@payltr.eu
+  </Link>
+</p>
+
+<p>
+  📧{" "}
+  <Link href="mailto:info@payltr.eu">
+    info@payltr.eu
+  </Link>
+</p>
+
+<p>
+  📞{" "}
+  <Link href="tel:+31684925325">
+    +31 6 84 92 53 25
+  </Link>
+</p>
+
+<p>
+  {tr(
+    "PayLTR, 3081 JH Rotterdam, Zuid-Holland, Netherlands"
+  )}
+</p>
+
+<p>
+  {tr("KvK: 98830309")}
+</p>
+
+<p>
+  {tr("This Cookie Policy was last updated: July 2026")}
+</p>
             </section>
           </main>
         </div>

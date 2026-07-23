@@ -35,20 +35,26 @@ function EcosystemCard({ card }) {
 
 function Card({ card, index, minHeight, showCardNumbers }) {
   const [imgFailed, setImgFailed] = useState(false);
-  const stepNumber = card.number ?? String(index + 1);
+  const stepNumber = card.number ?? String(index + 1).padStart(2, "0");
   const showImage = Boolean(card.image && !imgFailed);
   const usePhotoCover = Boolean(card.title && showImage);
-  const prefixNumber = showCardNumbers !== false;
+  const showBadge = showCardNumbers !== false;
 
   return (
     <article
       className={styles.card}
       style={minHeight ? { minHeight } : undefined}
     >
-      <div
-        className={`${styles.graphicBox} ${usePhotoCover ? styles.graphicBoxCover : styles.graphicBoxContain}`}
-      >
-        {showImage ? (
+      {showBadge ? (
+        <span className={styles.cardBadge} aria-hidden="true">
+          {stepNumber}
+        </span>
+      ) : null}
+
+      {showImage ? (
+        <div
+          className={`${styles.graphicBox} ${usePhotoCover ? styles.graphicBoxCover : styles.graphicBoxContain}`}
+        >
           <div
             className={`${styles.graphicImageWrap} ${usePhotoCover ? styles.graphicImageWrapFill : styles.graphicImageWrapPad}`}
           >
@@ -61,38 +67,25 @@ function Card({ card, index, minHeight, showCardNumbers }) {
               onError={() => setImgFailed(true)}
             />
           </div>
-        ) : card.icon ? (
-          <div className={styles.graphicIcon}>{card.icon}</div>
-        ) : (
-          <span className={styles.graphicFallback} aria-hidden>
-            {stepNumber}
-          </span>
-        )}
-      </div>
+        </div>
+      ) : (
+        <>
+          <div className={styles.iconWrap}>
+            {card.icon ? (
+              <span className={styles.icon}>{card.icon}</span>
+            ) : (
+              <span className={styles.iconFallback} aria-hidden>
+                {stepNumber}
+              </span>
+            )}
+          </div>
+          <span className={styles.iconUnderline} aria-hidden="true" />
+        </>
+      )}
 
       <div className={styles.cardText}>
-        {card.title ? (
-          <>
-            <p className={styles.cardTitle}>
-              {prefixNumber ? (
-                <>
-                  <span className={styles.captionNumber}>{stepNumber}.</span>{" "}
-                </>
-              ) : null}
-              {card.title}
-            </p>
-            {card.body ? <p className={styles.cardBody}>{card.body}</p> : null}
-          </>
-        ) : card.body ? (
-          <p className={styles.cardTitle}>
-            {prefixNumber ? (
-              <>
-                <span className={styles.captionNumber}>{stepNumber}.</span>{" "}
-              </>
-            ) : null}
-            {card.body}
-          </p>
-        ) : null}
+        {card.title ? <p className={styles.cardTitle}>{card.title}</p> : null}
+        {card.body ? <p className={styles.cardBody}>{card.body}</p> : null}
       </div>
     </article>
   );
@@ -152,9 +145,17 @@ export default function BenifitsBusinesses({ content }) {
       data-aos="fade-up"
     >
       <div className={styles.inner} data-aos="fade-up">
-        <p className={`${styles.kicker} dot-gothic`}>
-          {translatedContent.title}
-        </p>
+        <div className={styles.sectionHeading}>
+          <span className={styles.sectionBadge}>The problem</span>
+
+          <h2 className={styles.sectionTitle}>{translatedContent.title}</h2>
+
+          {translatedContent.lastContent && (
+            <p className={styles.sectionSubtitle}>
+              {translatedContent.lastContent}
+            </p>
+          )}
+        </div>
 
         {useSwiper ? (
           <div className={styles.swiperWrap} data-aos="fade-up">
@@ -198,10 +199,6 @@ export default function BenifitsBusinesses({ content }) {
               />
             ))}
           </div>
-        )}
-
-        {translatedContent.lastContent && (
-          <p className={styles.lastContent}>{translatedContent.lastContent}</p>
         )}
       </div>
     </section>

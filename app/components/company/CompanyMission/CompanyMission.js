@@ -7,47 +7,88 @@ export default function CompanyMission({ content }) {
   const translated = useTranslatedContent(content);
 
   return (
-    <section className={styles.section} aria-labelledby="company-mission-title">
-      <div className={styles.inner}>
+    <section
+      className={styles.section}
+      aria-labelledby="company-mission-title"
+    >
+      {/* Background Effects */}
+
+      <div className={styles.blurOne}></div>
+      <div className={styles.blurTwo}></div>
+
+      <div className={styles.container}>
+        {/* LEFT */}
+
         <div className={styles.left}>
-          <p className={styles.label}>{translated.label}</p>
-          <h2 id="company-mission-title" className={styles.title}>
+          <span className={styles.label}>
+            {translated.label}
+          </span>
+
+          <h2
+            id="company-mission-title"
+            className={styles.title}
+          >
             {translated.title}
-            <span className={styles.titleHighlight}>{translated.titleHighlight}</span>
+
+            <span className={styles.titleHighlight}>
+              {translated.titleHighlight}
+            </span>
           </h2>
+
           {translated.paragraphs.map((paragraph) => (
-            <p className={styles.text} key={paragraph.slice(0, 24)}>
+            <p
+              key={paragraph}
+              className={styles.paragraph}
+            >
               {paragraph}
             </p>
           ))}
         </div>
 
-        <div className={styles.journeyCard}>
-          <h3 className={styles.journeyTitle}>{translated.journeyTitle}</h3>
-          <ul className={styles.journeyTimeline}>
-            {translated.journeySteps.map((step) => {
-              const label = typeof step === "string" ? step : step.label;
-              const highlight = typeof step === "string" ? false : step.highlight;
+        {/* RIGHT */}
 
-              return (
-                <li
-                  className={`${styles.journeyStep} ${highlight ? styles.journeyStepHighlight : styles.journeyStepPlain}`}
-                  key={label}
+        <div className={styles.timelineCard}>
+          <h3 className={styles.timelineTitle}>
+            {translated.journeyTitle}
+          </h3>
+
+          <div className={styles.timeline}>
+            {translated.journeySteps.map((step, index) => (
+              <div
+                key={step.title}
+                className={styles.step}
+              >
+                {/* Timeline */}
+
+                <div className={styles.lineColumn}>
+                  <span className={styles.node}></span>
+
+                  {index !==
+                    translated.journeySteps.length - 1 && (
+                    <span className={styles.line}></span>
+                  )}
+                </div>
+
+                {/* Card */}
+
+                <div
+                  className={`${styles.stepCard} ${
+                    step.highlight
+                      ? styles.primaryCard
+                      : styles.secondaryCard
+                  }`}
                 >
-                  <div className={styles.dotCol}>
-                    <span className={styles.journeyDot} aria-hidden="true" />
-                  </div>
-                  <div className={styles.labelCol}>
-                    {highlight ? (
-                      <span className={styles.journeyBox}>{label}</span>
-                    ) : (
-                      <span className={styles.journeyPlain}>{label}</span>
-                    )}
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
+                  <h4 className={styles.stepTitle}>
+                    {step.title}
+                  </h4>
+
+                  <p className={styles.stepDescription}>
+                    {step.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
