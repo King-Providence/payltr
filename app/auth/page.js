@@ -4,8 +4,11 @@ import { useState } from "react";
 import { FiEye } from "react-icons/fi";
 import styles from "./page.module.css";
 import Image from "next/image";
+import { useTranslation } from "react-i18next";
+import "@/lib/i18n";
 
 export default function AuthPage() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [fullName, setFullName] = useState("");
@@ -26,15 +29,23 @@ export default function AuthPage() {
             </div>
           </div>
 
-          <h1 className={styles.leftTitle}>Get paid before your clients pay you.</h1>
-          <ul className={styles.leftList} >
-            <li>Instant credit decisioning</li>
-            <li>No hidden fees, transparent pricing</li>
-            <li>Works with your existing bank</li>
+          <h1 className={styles.leftTitle}>
+            {t("Get paid before your clients pay you")}
+          </h1>
+          <ul className={styles.leftList}>
+            <li>{t("Instant credit decisioning", { defaultValue: "Instant credit decisioning" })}</li>
+            <li>
+              {t("No hidden fees, transparent pricing", {
+                defaultValue: "No hidden fees, transparent pricing",
+              })}
+            </li>
+            <li>
+              {t("Works with your existing bank", {
+                defaultValue: "Works with your existing bank",
+              })}
+            </li>
           </ul>
-
-
-        </div>          
+        </div>
         <div className={styles.leftFooter}>© 2025 PayLTR</div>
       </div>
 
