@@ -96,7 +96,7 @@ export default function CookiesSettingsPage() {
               </p>
               <p>
   {tr(
-    "You may modify your cookie preferences at any time via the Cookie Settings link in the footer or by contacting us at privacy@payltr.eu."
+    "You may modify your cookie preferences at any time via the Cookie Settings link in the footer or by contacting us at support@payltr.eu."
   )}
 </p>
             </section>
@@ -293,8 +293,8 @@ export default function CookiesSettingsPage() {
 
 <p>
   📧{" "}
-  <Link href="mailto:privacy@payltr.eu">
-    privacy@payltr.eu
+  <Link href="mailto:support@payltr.eu">
+    support@payltr.eu
   </Link>
 </p>
 

@@ -147,7 +147,7 @@ export const companyFocusContent = {
     {
       title: "Funding partner network",
       description:
-        "Qeld provides the capital and makes the final credit decision, absorbing all default risk.",
+        "Our licensed financial partner provides the capital and makes the final credit decision, absorbing all default risk.",
       icon: "FiShare2",
     },
     {
@@ -189,7 +189,7 @@ export const companyValuesContent = {
   ],
 
   closing:
-    "This makes PayLTR fundamentally different from both Banxware (which targets lenders seeking SME demand) and traditional embedded lenders (which take balance sheet risk). We help platforms, banks and fintechs serve the SME customers they already have.",
+    "This makes PayLTR fundamentally different from other platforms (which targets lenders seeking SME demand) and traditional embedded lenders (which take balance sheet risk). We help platforms, banks and fintechs serve the SME customers they already have.",
 };
 
 export const companyFounderContent = {

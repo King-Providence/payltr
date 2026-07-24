@@ -17,7 +17,7 @@ const FOOTER_COLUMNS = [
     { label: "FAQ", href: "/faq" },
     { label: "COOKIE POLICY", href: "/cookiebeleid" },
     { label: "PRIVACY POLICY", href: "/privacy-policy" },
-    { label: "TERMS OF SERVICE", href: "/terms-of-service" },
+    { label: "TERMS OF SERVICE", href: "/terms" },
   ],
 ];
 

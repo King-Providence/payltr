@@ -29,7 +29,7 @@ const NAV_LINKS = [
   { labelKey: "navbar.partners", fallback: "For Partners", href: "/partners" },
   { labelKey: "navbar.about", fallback: "About", href: "/company" },
   // TODO: confirm real route for the Request Loan page — placeholder below
-  { labelKey: "navbar.requestLoan", fallback: "Request Loan", href: "/auth" },
+  { labelKey: "navbar.requestLoan", fallback: "Request Loan", href: "/aanvragen" },
 ];
 
 // TODO: confirm real login destination — placeholder below (could be an external

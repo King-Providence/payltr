@@ -153,7 +153,7 @@ export const howItWorksFaqContent = {
     {
       question: "Is there a minimum or maximum funding amount?",
       content:
-        "Funding through the Funding Partner Network is available up to €500,000. Minimum amounts vary by partner and are assessed during eligibility.",
+        "Funding through the Funding Partner Network is available up to €500,000. Minimum is 3000 & we have 1 license financing partner with a dnb license",
     },
     {
       question: "Can a business apply multiple times?",
