@@ -272,16 +272,6 @@ export const companyStoryContent = {
       description:
         "Platform goes live. Business page launches. First partner integrations operational.",
     },
-    {
-      date: "2027",
-      description:
-        "Partner network expands across the Netherlands. Compliance and Financial Controller roles added to the team.",
-    },
-    {
-      date: "2028",
-      description:
-        "Series A. European expansion: Belgium, France, Germany. Institutional funding partnerships established.",
-    },
   ],
 };
 
