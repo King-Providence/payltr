@@ -3,7 +3,7 @@
 import styles from "./companyPartners.module.css";
 import { useTranslatedContent } from "@/src/hooks/useTranslatedContent";
 
-const NODE_POSITION_CLASSES = ["nodeTop", "nodeRight", "nodeBottom", "nodeLeft"];
+const NODE_POSITION_CLASSES = ["nodeLeft", "nodeRight"];
 
 export default function CompanyPartners({ content }) {
   const translated = useTranslatedContent(content);
@@ -26,16 +26,12 @@ export default function CompanyPartners({ content }) {
 
         {/* Decorative orbit diagram — desktop only, purely visual, real info lives in the cards below */}
         <div className={styles.orbitWrap} aria-hidden="true">
-          <svg className={styles.orbitSvg} viewBox="0 0 500 500" preserveAspectRatio="xMidYMid meet">
-            <line x1="250" y1="250" x2="250" y2="70" className={styles.orbitLine} />
-            <line x1="250" y1="250" x2="430" y2="250" className={styles.orbitLine} />
-            <line x1="250" y1="250" x2="250" y2="430" className={styles.orbitLine} />
-            <line x1="250" y1="250" x2="70" y2="250" className={styles.orbitLine} />
+          <svg className={styles.orbitSvg} viewBox="0 0 560 220" preserveAspectRatio="xMidYMid meet">
+            <line x1="280" y1="110" x2="80" y2="110" className={styles.orbitLine} />
+            <line x1="280" y1="110" x2="480" y2="110" className={styles.orbitLine} />
 
-            <line x1="250" y1="250" x2="250" y2="70" className={styles.orbitPulse} />
-            <line x1="250" y1="250" x2="430" y2="250" className={styles.orbitPulse} />
-            <line x1="250" y1="250" x2="250" y2="430" className={styles.orbitPulse} />
-            <line x1="250" y1="250" x2="70" y2="250" className={styles.orbitPulse} />
+            <line x1="280" y1="110" x2="80" y2="110" className={styles.orbitPulse} />
+            <line x1="280" y1="110" x2="480" y2="110" className={styles.orbitPulse} />
           </svg>
 
           <div className={styles.hub}>

@@ -294,16 +294,6 @@ export const companyPartnersContent = {
       initials: "P",
       role: "PSD2 open banking, real-time bank transaction feeds",
     },
-    {
-      name: "Mollie",
-      initials: "M",
-      role: "iDEAL disbursement and SEPA repayment processing",
-    },
-    {
-      name: "Visma",
-      initials: "V",
-      role: "First active distribution partner (accounting & ERP platform)",
-    },
   ],
 
   closing:
