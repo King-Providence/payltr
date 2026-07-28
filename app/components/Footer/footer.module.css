@@ -130,20 +130,26 @@
   }
 
   .brandCol {
-    align-items: center;
-    max-width: 100%;
+    display: contents;
+  }
+
+  .logoMark {
+    order: 1;
   }
 
   .logoImage {
     width: min(100%, 300px);
   }
 
-  .legalBlock {
-    align-items: center;
+  .columns {
+    order: 2;
+    justify-content: center;
   }
 
-  .columns {
-    justify-content: center;
+  .legalBlock {
+    order: 3;
+    align-items: center;
+    margin-top: 0.5rem;
   }
 }
 
